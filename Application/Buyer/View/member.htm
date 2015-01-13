@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" -->
+	<meta charset="UTF-8">
+  <title>用户中心</title>
+	<meta http-equiv="pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="member_files/jquery.css">
+	<link rel="stylesheet" href="member_files/footer.css">
+	<script src="member_files/jquery-1.js"></script>
+	<script src="member_files/jquery.js"></script>
+	<script type="text/javascript">
+		var imgUrl = "http://wx.qlogo.cn/mmopen/w9h84ibs6ic2cwVYeJTqmRtNpkhXTqYMrAGA5mAW6d5rPQ4qHvDuSkaZ5ndOj3jajyCRfCjOSYdl9GlicWCUR0v5Lib41WE4B5eu/0"; //注意必须是绝对路径
+      //var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    	var lineLink = window.location.href;//同样，必须是绝对路径
+        var descContent = ''; //分享给朋友或朋友圈时的文字简介
+var shareTitle = new Array();
+shareTitle[0] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[1] = '借你几个豹子胆，让你在这里狂欢，唯有你，才能让这里“动”起来。';
+shareTitle[2] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[3] = '在这里“拼”的是耐力，当你在这里不带走任何东西，那是我的错。';
+shareTitle[4] = '当我在向你招手，招呼你“戳”进来，而你却视而不见，你怎么能这么狠心？';
+        var appid = ''; //apiID，可留空
+        var range = Math.floor(Math.random()*(4));
+        //alert(range);
+	    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+	    function shareFriend() {
+           WeixinJSBridge.invoke('sendAppMessage',{
+               "appid": appid,
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": ''
+           }, function(res) {
+               //_report('send_msg', res.err_msg);
+           })
+        }
+        function shareTimeline() {
+           WeixinJSBridge.invoke('shareTimeline',{
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": shareTitle[range]
+           }, function(res) {
+                  //_report('timeline', res.err_msg);
+           });
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+           // 发送给好友
+           WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               shareFriend();
+           });
+           // 分享到朋友圈
+           WeixinJSBridge.on('menu:share:timeline', function(argv){
+               shareTimeline();
+           });
+       }, false);
+	</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+<link rel="stylesheet" href="member_files/panel.css">
+	<link rel="stylesheet" href="member_files/common.css">
+	<section style="min-height: 559px;" class="ui-page ui-page-theme-a ui-page-active" tabindex="0" data-url="page1" data-role="page" id="page1">
+			<img src="member_files/header_bg.gif" class="my-header-img">
+			<div class="my-ui-grid">
+				<div class="ui-grid-b">
+			    	<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:150px"></div></div>
+			    	<div class="ui-block-b">
+			    		<div class="ui-bar ui-bar-a" style="height:150px;">
+			    			<div class="my-header-image">
+			    				<img src="member_files/0.jpg"><br>
+			    				15920326855			    			</div>
+			    		</div>
+			    	</div>
+			   		<div class="ui-block-c">
+			   			<div class="ui-bar ui-bar-a" style="height:150px">
+
+			   			</div>
+			   		</div>
+				</div><!-- /grid-b -->
+			</div>
+			<div class="my-nav">
+				<div class="ui-grid-c">
+			    	<div class="ui-block-a" jump-url="http://wsq.qq.com/reflow/263536219" onclick="nav_jump(this)">
+			    		<div class="ui-bar ui-bar-a my-current" style="font-weight:400;">
+			    			<img src="member_files/logo.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			    			晒单区
+			    		</div>
+			    	</div>
+			    	<div class="ui-block-b" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/teach_buy/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			    		<div class="ui-bar ui-bar-a" style="font-weight:400;">			    			
+			    			<img src="member_files/car.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			    			购买流程
+			    		</div>
+			    	</div>
+			   		<div class="ui-block-c" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/integral/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			   			<div class="ui-bar ui-bar-a" style="font-weight:400;">			    			
+			    			<img src="member_files/dan.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			   				积分购
+			   			</div>
+			   		</div>
+			   		<div class="ui-block-c" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/panic_buy/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			   			<div class="ui-bar ui-bar-a" style="border-right:none;font-weight:400;">		<img src="member_files/shai.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			   				全民疯抢</div>
+			   		</div>
+				</div><!-- /grid-b -->
+			</div>
+		<section role="main" data-role="content" class="content ui-content">
+			<a class="cont mymenu myorder ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/my_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">我的订单<span class="fright"><img src="member_files/right-goto.png" alt=""></span></a>
+			<a class="cont mymenu mycollect ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/mycollect/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">我的收藏<span class="fright"><img src="member_files/right-goto.png" alt=""></span></a>
+			<!-- <a class="cont mymenu mymessage" href="">消息中心<span class="fright"><img src="css/images/common/right-goto.png" alt=""></span></a> -->
+			<a class="cont mymenu addressmanage ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">地址管理<span class="fright"><img src="member_files/right-goto.png" alt=""></span></a>
+		</section><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer role="contentinfo" data-role="footer" class="footer ui-footer ui-bar-inherit">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="member_files/index.png" alt="" style="margin-bottom:0.5em;"><br>
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="member_files/category.png" alt="" style="margin-bottom:0.5em;"><br>
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="member_files/collect.png" alt="" style="margin-bottom:0.5em;"><br>
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="member_files/carc.png" alt="" style="margin-bottom:0.5em;"><br>
+							购物车
+						</a>
+					</li>
+					<li class="footer-list nav-current">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="member_files/man.png" alt="" style="margin-bottom:0.5em;"><br>
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

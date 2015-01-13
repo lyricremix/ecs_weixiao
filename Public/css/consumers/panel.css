@@ -1,0 +1,120 @@
+@charset "utf-8";
+#page1 a{
+	color: #000;
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#page1 .header,#page1 .footer{
+	border: 0;
+}
+#page1 .header{
+	position: relative;
+}
+#page1 .member-bg,#page1 .member-info{
+	width: 100%;
+	margin: 0;
+	padding:0;
+}
+#page1 .member-info{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+#page1 .info-list{
+	width: 33.3%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+#page1 .info-list .member-pic{
+	width: 60%;
+	margin-bottom: 1em;
+}
+#page1 .info-list .middle{
+	height: 33.3%;
+	width: 100%;
+	text-align: center;
+}
+#page1 .middle .member-name{
+	padding-left: 0;
+	color: #fff;
+}
+#page1 .member-pic{
+	padding: 0;
+	margin: 0;
+}
+#page1 .header{
+	background: #ffffff;
+	color: #ff5616;
+	border-bottom: 1px solid #fef5ee;
+	padding-left: 0;
+	padding-right: 0;
+	line-height: 0;
+}
+#page1 .content{
+	padding-top: 0;
+	margin-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom:0.3em;
+	background: #e6e6e6;
+	min-height: 30em;
+}
+#page1 .cont{
+	padding-left: 0.5em;
+	color: #999;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+#page1 .black{
+	color: #000;
+}
+#page1 .red{
+	color: #fc4300;
+}
+#page1 .mymenu{
+	background: #fff;
+	color: #000;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-indent: 3.4em;
+	display: block;
+}
+#page1 .myorder{
+	background: url("../../images/consumers/myorder.png") no-repeat 1.5em 1em #fff;
+	border: 1px solid #e6e6e6;
+}
+#page1 .mycollect{
+	margin-top: 0;
+	background: url("../../images/consumers/mycollect.png") no-repeat 1.5em 1em #fff;
+}
+#page1 .mymessage{
+	margin-top: 0em;
+	border-top: 1px solid #e6e6e6;
+	background: url("../../images/consumers/mymessage.png") no-repeat 1.5em 1em #fff;
+}
+#page1 .addressmanage{
+	margin-top: 0em;
+	border-top: 1px solid #e6e6e6;
+	background: url("../../images/consumers/addressmanage.png") no-repeat 1.5em 1em #fff;
+}
+#page1 .fright{
+	color: #000;
+	position: absolute;
+	margin-top: 0;
+	right: 4%;
+	font-size: 1.1em;
+	padding-left: 0;
+	text-align: right;
+}
+
+#page1 .mtop{
+	margin-top: 1em;
+}

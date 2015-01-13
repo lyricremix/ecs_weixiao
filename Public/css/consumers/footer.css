@@ -1,0 +1,36 @@
+	
+#page1 .footer{
+	background: #464951;
+	font-size: 0.8em;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	bottom: 0;
+	border:none;
+}
+#page1 .footer-list{
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	width: 20%;
+	float: left;
+	text-align: center;
+}
+#page1 .footer-list a{
+	color: #a6a9ab;
+	font-weight: normal;
+}
+#page1 nav:after{
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	font:0/0 arial;
+	visibility:hidden;
+}
+#page1 .footer-list img{
+	vertical-align: middle;
+	width:16px;
+}

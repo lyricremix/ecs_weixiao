@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://localhost/pz/wx/index.php/consumers/consumers/goods_list/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/8" -->
+	<meta charset="UTF-8">
+  <title>商品列表</title>
+	<meta http-equiv="pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="goodslist_files/jquery.css">
+	<link rel="stylesheet" href="goodslist_files/footer.css">
+	<script src="goodslist_files/jquery-1.js"></script>
+	<script src="goodslist_files/jquery.js"></script>
+	<script type="text/javascript">
+		var imgUrl = "http://wx.qlogo.cn/mmopen/w9h84ibs6ic2cwVYeJTqmRtNpkhXTqYMrAGA5mAW6d5rPQ4qHvDuSkaZ5ndOj3jajyCRfCjOSYdl9GlicWCUR0v5Lib41WE4B5eu/0"; //注意必须是绝对路径
+      //var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    	var lineLink = window.location.href;//同样，必须是绝对路径
+        var descContent = ''; //分享给朋友或朋友圈时的文字简介
+var shareTitle = new Array();
+shareTitle[0] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[1] = '借你几个豹子胆，让你在这里狂欢，唯有你，才能让这里“动”起来。';
+shareTitle[2] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[3] = '在这里“拼”的是耐力，当你在这里不带走任何东西，那是我的错。';
+shareTitle[4] = '当我在向你招手，招呼你“戳”进来，而你却视而不见，你怎么能这么狠心？';
+        var appid = ''; //apiID，可留空
+        var range = Math.floor(Math.random()*(4));
+        //alert(range);
+	    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+	    function shareFriend() {
+           WeixinJSBridge.invoke('sendAppMessage',{
+               "appid": appid,
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": ''
+           }, function(res) {
+               //_report('send_msg', res.err_msg);
+           })
+        }
+        function shareTimeline() {
+           WeixinJSBridge.invoke('shareTimeline',{
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": shareTitle[range]
+           }, function(res) {
+                  //_report('timeline', res.err_msg);
+           });
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+           // 发送给好友
+           WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               shareFriend();
+           });
+           // 分享到朋友圈
+           WeixinJSBridge.on('menu:share:timeline', function(argv){
+               shareTimeline();
+           });
+       }, false);
+	</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+
+	<link rel="stylesheet" href="goodslist_files/goodslist.css">
+
+	<section class="ui-page ui-page-theme-a ui-page-active" tabindex="0" data-url="page1" data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden; min-height: 559px;">
+		<header role="banner" data-role="header" class="header ui-header ui-bar-inherit" data-position="inline">
+			<a class="ui-btn-left" data-ajax="false" href="javascript:window.history.go(-1);" data-role="none"><img class="top-img" style="float:left;" src="goodslist_files/icon-msg-left.png" alt=""></a>
+			<h1 aria-level="1" role="heading" class="ui-title" data-role="none"></h1>
+<!-- 			<a href="" data-role="none">
+				<img class="top-img" src="css/images/common/control.png" alt="">
+				<img class="top-img control" src="css/images/common/icon-msg-left.png" alt="">
+			</a> -->
+		</header>
+		<section role="main" data-role="content" class="content ui-content" style="margin-bottom:5em;">
+		<!-- 	<nav>
+			<ul class="menu">
+				<li class="current">
+					<div class="orderfont">
+						<span class="red">价格</span>
+						<span class="order-ud">
+							<a href=""><img style="float: right;" src="css/images/common/order-u.png" alt=""></a>
+							<a href=""><img style="float: right;" src="css/images/common/order-d.png" alt=""></a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="orderfont">
+						<span>销量</span>
+						<span class="order-ud">
+							<a href=""><img style="float: right;" src="css/images/common/order-u.png" alt=""></a>
+							<a href=""><img style="float: right;" src="css/images/common/order-d.png" alt=""></a>
+						</span>
+					</div>
+				</li>
+			</ul>
+			</nav> -->
+<!-- 			<section class="orders">
+				<h3 class="cont black">价格区间</h3>
+				<ul>
+					<li>1-50</li>
+					<li>50-100</li>
+					<li>100-150</li>
+					<li>200-250</li>
+					<li>300-350</li>
+				</ul>
+			</section> -->
+			<article class="infomation infomation2">
+								<section class="goodslist">
+					<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/52">
+						<img class="goods-pic" src="goodslist_files/lcj_201409101340264204.jpg" alt="">
+						<span class="goods-desc">2014恒也男装中低腰修身弯刀微挎新款弹力小脚裤</span><br>
+						<span class="cont mtop">款号 : 1321071</span>
+						<span class="cont black">
+							¥<span class="red">112.2</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+								<section class="goodslist">
+					<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/51">
+						<img class="goods-pic" src="goodslist_files/lcj_201409101805234818.jpg" alt="">
+						<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br>
+						<span class="cont mtop">款号 : 1321102</span>
+						<span class="cont black">
+							¥<span class="red">122.2</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+								<section class="goodslist">
+					<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/50">
+						<img class="goods-pic" src="goodslist_files/lcj_201304231450599832.jpg" alt="">
+						<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤</span><br>
+						<span class="cont mtop">款号 : 2602</span>
+						<span class="cont black">
+							¥<span class="red">104</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+							</article>	
+		</section>
+
+		<!-- <div style="text-align:center;bottom:4em;position:fixed;width:100%;"><a href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="height:40px;line-height:40px;border-radius:15px 15px;background:#9ec326;display:inline-block;width:130px;text-align:center;color:#ffffff;box-shadow:none;text-shadow:none;">我也要开店</a></div> --><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer role="contentinfo" data-role="footer" class="footer ui-footer ui-bar-inherit">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="goodslist_files/index.png" alt="" style="margin-bottom:0.5em;"><br>
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="goodslist_files/category.png" alt="" style="margin-bottom:0.5em;"><br>
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="goodslist_files/collect.png" alt="" style="margin-bottom:0.5em;"><br>
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="goodslist_files/carc.png" alt="" style="margin-bottom:0.5em;"><br>
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="goodslist_files/man.png" alt="" style="margin-bottom:0.5em;"><br>
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

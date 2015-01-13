@@ -1,0 +1,143 @@
+@charset "utf-8";
+#page1,#page1 .header,{
+	background: #ffffff;
+}
+#page1 .header{
+	background: #ffffff;
+	color: #ff5616;
+	border-bottom: 1px solid #fef5ee;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#page1 h1{
+	display: inline-block;
+	font-family: "微软雅黑";
+	font-size: 1.2em;
+	font-weight: normal;
+	position: static;
+	text-align: left;
+	margin-left: 0;
+}
+#page1 a[data-role="none"]{
+	position: static;
+}
+#page1 .top-img{
+	float: left;
+	vertical-align: middle;
+	margin-top: 1.2em;
+}	
+#page1 .content{
+	padding-top: 1em;
+	padding-bottom:0.5em;
+}
+#page1 .cont{
+	padding-left: 0.5em;
+	color: #999;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+#page1 .red{
+	color: #fc4300;
+}
+#page1 .goodslist{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #d1d1d1;
+}
+#page1 .goods-pic{
+	width: 35%;
+	border: 1px solid #fff;
+	display: inline-block;
+	float: left;
+	margin-right: 3%;
+}
+#page1 .goods-desc{
+	font-size: 0.9em;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	line-height: 1.6em;
+}
+#page1 .cl:after{
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	font:0/0 arial;
+	visibility:hidden;
+}
+#page1 .total{
+	width: 60%;
+}
+#page1 .black{
+	color: #333;
+}
+#page1 .buy-title{
+	margin-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #d1d1d1;
+}
+#page1 .color,#page1 .size,#page1 .order{
+	float: left;
+}
+#page1 .color{
+	/*margin-left: 5%;*/
+	width: 16%;
+	padding-left: 0;
+}
+#page1 .size{
+	width: 34%;
+	padding-left: 0;
+}
+#page1 .order{
+	padding-left: 0;
+	width: 50%;
+	text-align: center;
+}
+#page1 .color2,#page1 .size2{
+	height: 3em;
+	line-height: 3em;
+}
+#page1 .order2{
+	height: 3em;
+	line-height: 3em;
+}
+#page1 .tags img{
+	vertical-align: middle;
+	cursor: pointer;
+}
+#page1 .num{
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	height: 23px;
+}
+#page1 .border{
+	border-bottom: 1px solid #d1d1d1;
+	padding-bottom: 1em;
+}
+#page1 .footer{
+	border:none;
+}
+#page1 .comfirm{
+	display:block;
+	font-size: 1em;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	width: 100%;
+	cursor: pointer;
+	padding-top: 0.8em;
+	border: none;
+	color: #ffffff;
+	padding-bottom: 1em;
+	outline: none;
+	width: 11em;
+	margin: 3em auto;
+	text-align:center;
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	/*text-indent: 1.5em;*/
+	background: #ff5533 url("../../images/consumers/renminbi.png") no-repeat 0.5em 0.7em;
+	background-size:20px 20px;
+}

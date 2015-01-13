@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://localhost/pz/wx/index.php/consumers/buyer/my_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/11" -->
+	<meta charset="UTF-8">
+  <title>我的订单</title>
+	<meta http-equiv="pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="myorder_files/jquery.css">
+	<link rel="stylesheet" href="myorder_files/footer.css">
+	<script src="myorder_files/jquery-1.js"></script>
+	<script src="myorder_files/jquery.js"></script>
+	<script type="text/javascript">
+		var imgUrl = ""; //注意必须是绝对路径
+      //var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    	var lineLink = window.location.href;//同样，必须是绝对路径
+        var descContent = ''; //分享给朋友或朋友圈时的文字简介
+var shareTitle = new Array();
+shareTitle[0] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[1] = '借你几个豹子胆，让你在这里狂欢，唯有你，才能让这里“动”起来。';
+shareTitle[2] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[3] = '在这里“拼”的是耐力，当你在这里不带走任何东西，那是我的错。';
+shareTitle[4] = '当我在向你招手，招呼你“戳”进来，而你却视而不见，你怎么能这么狠心？';
+        var appid = ''; //apiID，可留空
+        var range = Math.floor(Math.random()*(4));
+        //alert(range);
+	    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+	    function shareFriend() {
+           WeixinJSBridge.invoke('sendAppMessage',{
+               "appid": appid,
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": ''
+           }, function(res) {
+               //_report('send_msg', res.err_msg);
+           })
+        }
+        function shareTimeline() {
+           WeixinJSBridge.invoke('shareTimeline',{
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": shareTitle[range]
+           }, function(res) {
+                  //_report('timeline', res.err_msg);
+           });
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+           // 发送给好友
+           WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               shareFriend();
+           });
+           // 分享到朋友圈
+           WeixinJSBridge.on('menu:share:timeline', function(argv){
+               shareTimeline();
+           });
+       }, false);
+	</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+<link rel="stylesheet" href="myorder_files/myorder.css">
+<style type="text/css">
+.ui-grid-b, .ui-grid-b, .ui-grid-c, .ui-grid-d, .ui-grid-solo{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+</style>
+	<section class="ui-page ui-page-theme-a ui-page-active" tabindex="0" data-url="page1" data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden; min-height: 559px;">
+<!-- 		<header data-role="header" class="header" data-position="inline" >
+			<h1 data-role="none"></h1>
+			<a href="javascript:window.history.go(-1);" data-role="none" data-ajax="false"><img class="top-img" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt=""></a>
+		</header> -->
+		<section role="main" data-role="content" class="content ui-content">
+			<article class="infomation infomation2" id="my-pay" style="padding-top:0;">
+				<div class="ui-grid-c" style="background:#eeeeee;height:40px;line-height:40px;">
+    				<div class="ui-block-a" style="text-align:center;">单号</div>
+    				<div class="ui-block-b" style="text-align:center;">金额</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					<select name="order_status" data-role="none" id="order-status">
+    						<option value="0">已取消</option>
+    						<!-- <option value="10">已取消</option> -->
+    						<option value="11" selected="selected">未付款</option>
+    						<option value="20">已付款</option>
+    						<option value="30">已发货</option>
+    						<option value="40">已完成</option>
+    					</select>
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">查看</div>
+				</div>
+												<div class="ui-grid-c">
+    				<div class="ui-block-a" style="text-align:center;">1436476928</div>
+    				<div class="ui-block-b" style="text-align:center;">￥938.00</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					未付款    					    					<a class="ui-link" data-ajax="false" href="javascript:;" onclick="cancle_order(this)" order-id="15716">取消订单</a>
+    					    					
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">
+    					<a class="ui-link" href="http://localhost/pz/wx/index.php/consumers/buyer/my_order_goods/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/15716" data-ajax="false">详细</a>
+    				</div>
+				</div>
+								<div class="ui-grid-c">
+    				<div class="ui-block-a" style="text-align:center;">1436423454</div>
+    				<div class="ui-block-b" style="text-align:center;">￥312.00</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					未付款    					    					<a class="ui-link" data-ajax="false" href="javascript:;" onclick="cancle_order(this)" order-id="15718">取消订单</a>
+    					    					
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">
+    					<a class="ui-link" href="http://localhost/pz/wx/index.php/consumers/buyer/my_order_goods/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/15718" data-ajax="false">详细</a>
+    				</div>
+				</div>
+							</article>		
+		</section>
+	</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#order-status').change(function(){
+			var status = $(this).val();
+			window.location.href = "http://localhost/pz/wx/index.php/consumers/buyer/my_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ"+'/'+status;
+		});
+	});
+		function cancle_order(obj){
+			var order_id = $(obj).attr('order-id');
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/cancle_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'order_id='+order_id+'&status=0',
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					window.location.reload();
+				}
+			});
+		}
+		function confirm_order(obj){
+			var order_id = $(obj).attr('order-id');
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/cancle_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'order_id='+order_id+'&status=40',
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					window.location.reload();
+				}
+			});
+		}
+</script>
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

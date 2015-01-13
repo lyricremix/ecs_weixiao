@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://localhost/pz/wx/index.php/consumers/address/change_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2978" -->
+	<meta charset="UTF-8">
+  <title>编辑地址</title>
+	<meta http-equiv="pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="addressedit_files/jquery.css">
+	<link rel="stylesheet" href="addressedit_files/footer.css">
+	<script src="addressedit_files/jquery-1.js"></script>
+	<script src="addressedit_files/jquery.js"></script>
+	<script type="text/javascript">
+		var imgUrl = ""; //注意必须是绝对路径
+      //var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    	var lineLink = window.location.href;//同样，必须是绝对路径
+        var descContent = ''; //分享给朋友或朋友圈时的文字简介
+var shareTitle = new Array();
+shareTitle[0] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[1] = '借你几个豹子胆，让你在这里狂欢，唯有你，才能让这里“动”起来。';
+shareTitle[2] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[3] = '在这里“拼”的是耐力，当你在这里不带走任何东西，那是我的错。';
+shareTitle[4] = '当我在向你招手，招呼你“戳”进来，而你却视而不见，你怎么能这么狠心？';
+        var appid = ''; //apiID，可留空
+        var range = Math.floor(Math.random()*(4));
+        //alert(range);
+	    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+	    function shareFriend() {
+           WeixinJSBridge.invoke('sendAppMessage',{
+               "appid": appid,
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": ''
+           }, function(res) {
+               //_report('send_msg', res.err_msg);
+           })
+        }
+        function shareTimeline() {
+           WeixinJSBridge.invoke('shareTimeline',{
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": shareTitle[range]
+           }, function(res) {
+                  //_report('timeline', res.err_msg);
+           });
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+           // 发送给好友
+           WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               shareFriend();
+           });
+           // 分享到朋友圈
+           WeixinJSBridge.on('menu:share:timeline', function(argv){
+               shareTimeline();
+           });
+       }, false);
+	</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+
+	<link rel="stylesheet" href="addressedit_files/addaddress.css">
+<style type="text/css">
+#page1 h1{
+	text-align: center;
+}
+.ui-header .ui-title{
+	margin-right: 0;
+}
+#page1 .header{
+	padding-left: 0;
+}
+#page1 h1{
+	display: block;
+}
+#page1 .addform .addr{
+	padding-bottom: 0;
+	margin-bottom: 10px;
+}
+#page1 .comfirm{
+	margin-top: 10px;
+}
+.my-select{
+	border:none;
+	background: #f9f9f9;
+}
+</style>
+
+	<section style="min-height: 559px;" class="ui-page ui-page-theme-a ui-page-active" tabindex="0" data-url="page1" data-role="page" id="page1">
+		<header role="banner" data-role="header" class="header ui-header ui-bar-inherit">
+			<h1 aria-level="1" role="heading" class="ui-title">编辑地址</h1>
+			<!-- <a href="" class="search" data-role="none"><img class="search" src="css/images/common/search-orange.png" alt=""></a> -->
+		</header>
+		<section role="main" data-role="content" class="content ui-content">
+			<fieldset class="ui-controlgroup ui-controlgroup-vertical ui-corner-all" data-role="controlgroup"><div class="ui-controlgroup-controls ">
+				<form action="">
+					<div class="contain">
+						<table data-role="none" class="addform">
+							<tbody><tr>
+								<td>
+									<label for="consignee">收货人姓名:</label>
+									<input placeholder="请输入收货人姓名！" id="consignee" data-role="none" name="consignee" value="叶佳航" type="text">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="phone_tel">手机号码:</label>
+									<input data-role="none" placeholder="请输入手机号码！" id="phone_tel" name="phone_tel" value="15920326855" type="number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="phone_mob">电话:</label>
+									<input data-role="none" placeholder="请输入电话！" id="phone_mob" name="phone_mob" value="020-8888888" type="text">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="zipcode">邮政编码:</label>
+									<input data-role="none" placeholder="请输入邮政编码！" id="zipcode" name="zipcode" value="510631" type="number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="province">省:</label>
+									<select onchange="load_city(this.value)" id="province" name="province" class="my-select" data-role="none"><option selected="selected" value="-1">选择省份</option><option value="2">北京市</option><option value="21">天津市</option><option value="40">上海市</option><option value="60">重庆市</option><option value="103">河北省</option><option value="115">山西省</option><option value="127">辽宁省</option><option value="142">吉林省</option><option value="152">黑龙江省</option><option value="166">内蒙古自治区</option><option value="179">江苏省</option><option value="193">浙江省</option><option value="205">安徽省</option><option value="223">福建省</option><option value="233">江西省</option><option value="245">山东省</option><option value="263">河南省</option><option value="282">湖北省</option><option value="300">湖南省</option><option value="316">广东省</option><option value="338">海南省</option><option value="341">广西省</option><option value="356">四川省</option><option value="378">贵州省</option><option value="388">云南省</option><option value="405">西藏自治区</option><option value="413">陕西省</option><option value="424">甘肃省</option><option value="439">青海省</option><option value="448">宁夏回族自治区</option><option value="454">新疆维吾尔自治区</option><option value="473">香港特别行政区</option><option value="474">澳门特别行政区</option><option value="475">台湾省</option></select>
+								</td>
+							</tr>
+							<tr>
+								<td class="addr">
+									<label for="city">市:</label>
+									<select onchange="load_district(this.value)" id="city" name="city" class="my-select" data-role="none">
+									</select>
+								</td>
+							</tr><!-- 
+							<tr>
+								<td class="addr">
+									<label for="district">区:</label>
+									<select id="district" name="district" class="my-select" data-role="none">
+									</select>
+								</td>
+							</tr> -->
+							<tr>
+								<td class="addr">
+									<label for="address">详细地址:</label>
+									<input data-role="none" placeholder="请输入详细地址！" id="address" name="address" value="新港西路231号" type="text">
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<input class="comfirm" data-role="none" value="确认" id="my-add-address" type="button">
+				</form>
+			</div></fieldset>
+		</section>
+	</section>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$('#my-add-address').click(function(){
+		var province = $('#province').val();
+		var city = $('#city').val();
+		var phone_tel = $('#phone_tel').val();
+		var phone_mob = $('#phone_mob').val();
+		var zipcode = $('#zipcode').val();
+		var consignee = $('#consignee').val();
+		var address = $('#address').val();
+		var url = "http://localhost/pz/wx/index.php/consumers/address/change_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2978";
+		if(phone_tel=='' && phone_mob==''){
+			alert('手机和电话必须填一个');
+			return false;
+		}
+		if(consignee==''){
+			alert('请填写收货人姓名');
+			return false;
+		}
+		if(address == ''){
+			alert('请填写详细地址');
+			return false;
+		}
+		if(province == '-1'){
+			alert('请选择省');
+			return false;
+		}
+		if(city == '-2'){
+			alert('请选择市');
+			return false;
+		}
+		$.ajax({
+			type:'post',
+			url:url,
+			data:'province='+province+'&city='+city+'&phone_tel='+phone_tel+'&phone_mob='+phone_mob+'&zipcode='+zipcode+'&consignee='+consignee+'&address='+address,
+			success:function(msg){
+				var msg = eval('('+msg+')');
+				if(msg.status!=1){
+					alert(msg.msg);
+					return false;
+				}
+				window.location.href = "http://localhost/pz/wx/index.php/consumers/address/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			}
+
+		});
+	});
+});
+    function load_province(){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_province",
+            type: 'post',
+            success:function(data){
+                var data=eval('('+data+')');
+                console.log(data['data'].length);
+                var count=data['data'].length;     
+                var str='<option value="-1">选择省份</option>';
+                for(var i=0;i<count;i++){
+                    //console.log(data['data'][i].region_name);
+                    str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                }
+                //console.log(str);
+                $('#province').html(str);
+            }
+
+        });
+    }
+    function load_city(region_id){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_city",
+            type: 'post',
+            data:'region_id='+region_id,
+            success:function(data){
+                var data=eval('('+data+')');
+                //console.log(data['data'].length);
+                if(data['status']){
+                    var count=data['data'].length;     
+                    var str='<option value="-2">选择城市</option>';
+                    for(var i=0;i<count;i++){
+                        //console.log(data['data'][i].region_name);
+                        str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                    }
+                    //console.log(str);
+                    $('#city').html(str);
+                }
+            }
+
+        });
+    }
+
+        function load_district(region_id){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_city",
+            type: 'post',
+            data:'region_id='+region_id,
+            success:function(data){
+                var data=eval('('+data+')');
+                //console.log(data['data'].length);
+                if(data['status']){
+                    var count=data['data'].length;     
+                    var str='';
+                    for(var i=0;i<count;i++){
+                        //console.log(data['data'][i].region_name);
+                        str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                    }
+                    //console.log(str);
+                    $('district').html(str);
+                }
+            }
+
+        });
+    }
+    load_province();
+</script>
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

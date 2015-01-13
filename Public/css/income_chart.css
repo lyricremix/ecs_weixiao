@@ -1,0 +1,47 @@
+/* 注册 */
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head + body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head + body .ui-btn-a.ui-focus, html head + body .ui-body-a.ui-focus{
+	box-shadow: none;
+}
+.my-card .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited{
+	background: #fc4300;
+	color:#fff;
+	text-shadow:none;
+}
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit{
+	background: #fff;
+	box-shadow: none;
+}
+.ui-header{
+	border: none;
+}
+.ui-mobile .ui-page{
+	background: #fff;
+}
+.my-card{
+	margin-top: 50px;
+}
+.my-income{
+	color:#fc4300;
+	height: 28px;
+	line-height: 28px;
+	font-size: 1.4em;
+}
+.my-income-detail{
+	color:#fc4300;
+	box-shadow: none;
+	text-shadow:none;
+}
+.ui-header .ui-title{
+	margin:0 5%;
+	text-align: left;
+	color: #fc4300;
+}
+.ui-listview > .ui-li-static{
+	padding:1.3em 0.5em;
+}
+.my-income-tip{
+	font-size: 0.8em;
+	color:#999999;
+	height:2em;
+	line-height: 2em;
+}

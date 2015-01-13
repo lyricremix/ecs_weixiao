@@ -1,0 +1,63 @@
+@charset "utf-8";
+#page1 .header,#page1 .centent{
+	background: #ffffff;
+}
+#page1 .header{
+	background: #ffffff;
+	color: #ff5616;
+	border-bottom: 1px solid #fef5ee;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#page1 h1{
+	display: inline-block;
+	font-family: "微软雅黑";
+	font-size: 1.2em;
+	font-weight: normal;
+	position: static;
+	text-align: left;
+	margin-left: 0;
+}
+#page1 a[data-role="none"]{
+	position: static;
+}
+#page1 img{
+	float: right;
+	vertical-align: middle;
+	margin-top: 1.2em;
+}
+#page1 .article-list{
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+}
+#page1 h3{
+	font-family: "微软雅黑";
+	font-weight: normal;
+	font-size: 1.2em;
+	margin-top: 0.5em;
+
+}
+#page1 .circle{
+	display: inline-block;
+	background: #ff623a;
+	margin-right: 0.2em;
+	width: 0.8em;
+	height: 0.8em;
+	border-radius: 2em;
+}
+#page1 .msgbody,#page1 .msgfooter{
+	font-size: 1em;
+	font-family: "微软雅黑";
+	line-height: 1.5em;
+}
+#page1 .msgfooter{
+	color: #999;	
+}
+#page1 .msgfooter:after{content:'\0020';display:block;height:0;clear:both}
+#page1 .msgfooter span{
+	float: left;
+}
+#page1 .msgfooter time{
+	float: right;
+}

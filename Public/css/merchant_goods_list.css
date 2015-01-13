@@ -1,0 +1,64 @@
+/* 开店公共样式 */
+.good-list{
+	margin-top: 10px;
+}
+.my-cloth-img{
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+}
+.my-cloth-price{
+	height:30px;
+}
+.my-cloth-des,.my-cloth-spec,.my-cloth-price,.my-cloth-price{
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 0.9em;
+	text-shadow:none;
+	box-shadow: none;
+	color:#666666;
+	line-height: 20px;
+}
+.my-cloth-des{
+	height:40px;
+	overflow: hidden;
+
+}
+.my-add-price{
+	float:left;
+}
+.my-edit-price{
+	float:right;
+	padding:0px 5px;
+	background:#ff5616;
+	color:#fff;
+	text-align: center;
+}
+.ui-input-text input, .ui-input-search input{
+	background: none;
+	margin:0;
+	padding:0;
+	min-height: 1em;
+}
+.ui-input-text, .ui-input-search{
+	margin:0;
+}
+.ui-shadow-inset{
+	box-shadow: none;
+	text-shadow:none;
+}
+.my-add-goods {
+	text-align: center;
+}
+.my-add-goods .ui-btn{
+	background: #ff5616;
+	color:#fff;
+	box-shadow: none;
+	text-shadow:none;
+	border-radius: 0.325em 0.325em 0.325em 0.325em;
+	width:40%;
+	margin:0;
+	margin-top: 2em;
+	display: inline;
+	margin-bottom: 20px;
+}

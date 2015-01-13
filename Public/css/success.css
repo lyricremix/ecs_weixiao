@@ -1,0 +1,44 @@
+/* 注册成功 */
+.ui-content{
+	padding: 0;
+}
+.my-images{
+	height: 100%;
+	overflow: hidden;
+}
+.my-images img{
+	width:100%;
+	height: 100%;
+}
+.ui-mobile .ui-page{
+	height: 100%;
+}
+.my-tip{
+	position: absolute;
+	bottom: 20%;
+	width:90%;
+	left: 5%;
+	height: 61px;
+	text-align: center;
+	text-shadow:none;
+	box-shadow: none;
+	color:#ff1d00;
+	font-weight: bold;
+}
+.my-set{
+	position: absolute;
+	bottom: 10%;
+	width:90%;
+	left: 5%;
+}
+.my-set .ui-btn{
+	background: #ff442c;
+	color: #fff;
+	text-shadow:none;
+	box-shadow: none;
+	font-weight: bold;
+	border: none;
+}
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head + body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head + body .ui-btn-a.ui-focus, html head + body .ui-body-a.ui-focus{
+	box-shadow: none;
+}

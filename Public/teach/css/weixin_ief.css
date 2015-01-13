@@ -1,0 +1,50 @@
+body{
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+.box{
+	position: absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right: 0;
+	background:url("../img/weixin_ief_02.jpg") no-repeat;
+	background-size: 100% 100%;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+#cas{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition:opacity .5s;
+	-ms-transition:opacity .5s;
+	-moz-transition:opacity .5s;
+}
+
+.noOp{
+	opacity: 0 !important;
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+}
+
+.page-current{
+	z-index:1;
+}
+
+.page img{ width:100%;}
+
+.page-16-1{ background:#1a1f23;}
+.page-17-1{ font-size:20PX; color:#FFF; background:#e82416;}

@@ -1,0 +1,25 @@
+/* 开店公共样式 */
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited{
+	background: #fff;
+}
+.ui-btn, label.ui-btn{
+	font-weight: 500;
+	box-shadow: none;
+	text-shadow:none;
+}
+.my-add-cat{
+	text-align: center;
+	margin-bottom: 50px;
+}
+.my-add-cat .ui-btn{
+	background: #ff5616;
+	color:#fff;
+	box-shadow: none;
+	text-shadow:none;
+	width:90%;
+	margin:0;
+	margin-top: 2em;
+}
+.my-pop{
+	margin:1em;
+}

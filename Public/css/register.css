@@ -1,0 +1,26 @@
+/* 注册 */
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit{
+	background: #ffffff;
+}
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head + body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head + body .ui-btn-a.ui-focus, html head + body .ui-body-a.ui-focus{
+	box-shadow:none;
+}
+.ui-field-contain{
+	border: none;
+}
+.ui-page-theme-a .ui-btn{
+	background: #fff;
+	color: #000;
+	font-weight: 500;
+}
+.myset .ui-btn{
+	background: #ff442c;
+	color: #fff;
+	text-shadow:none;
+}
+.ui-shadow-inset{
+	box-shadow: none;
+}
+.ui-shadow{
+	box-shadow: none;
+}

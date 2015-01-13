@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" -->
+	<meta charset="UTF-8">
+  <title>店铺</title>
+	<meta http-equiv="pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
+	<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="index_files/jquery.css">
+	<link rel="stylesheet" href="index_files/footer.css">
+	<script src="index_files/jquery-1.js"></script>
+	<script src="index_files/jquery.js"></script>
+	<script type="text/javascript">
+		var imgUrl = "http://wx.qlogo.cn/mmopen/w9h84ibs6ic2cwVYeJTqmRtNpkhXTqYMrAGA5mAW6d5rPQ4qHvDuSkaZ5ndOj3jajyCRfCjOSYdl9GlicWCUR0v5Lib41WE4B5eu/0"; //注意必须是绝对路径
+      //var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    	var lineLink = window.location.href;//同样，必须是绝对路径
+        var descContent = ''; //分享给朋友或朋友圈时的文字简介
+var shareTitle = new Array();
+shareTitle[0] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[1] = '借你几个豹子胆，让你在这里狂欢，唯有你，才能让这里“动”起来。';
+shareTitle[2] = '睿智的你，指尖滑过我的瞬间，就没有点进来看看的冲动吗？等你哦！';
+shareTitle[3] = '在这里“拼”的是耐力，当你在这里不带走任何东西，那是我的错。';
+shareTitle[4] = '当我在向你招手，招呼你“戳”进来，而你却视而不见，你怎么能这么狠心？';
+        var appid = ''; //apiID，可留空
+        var range = Math.floor(Math.random()*(4));
+        //alert(range);
+	    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+	    function shareFriend() {
+           WeixinJSBridge.invoke('sendAppMessage',{
+               "appid": appid,
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": ''
+           }, function(res) {
+               //_report('send_msg', res.err_msg);
+           })
+        }
+        function shareTimeline() {
+           WeixinJSBridge.invoke('shareTimeline',{
+               "img_url": imgUrl,
+               "img_width": "200",
+               "img_height": "200",
+               "link": lineLink,
+               "desc": shareTitle[range],
+               "title": shareTitle[range]
+           }, function(res) {
+                  //_report('timeline', res.err_msg);
+           });
+        }
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+           // 发送给好友
+           WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               shareFriend();
+           });
+           // 分享到朋友圈
+           WeixinJSBridge.on('menu:share:timeline', function(argv){
+               shareTimeline();
+           });
+       }, false);
+	</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+
+	<link rel="stylesheet" href="index_files/index.css">
+	<link rel="stylesheet" href="index_files/common.css">
+<style type="text/css">
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b{
+	width:48%;
+	margin-right: 2%;
+	border:1px solid #eeeeee;
+}
+#page1 .theme-list{
+	border:1px solid #eee;
+}
+#page1 .theme-list{
+	width:46%;
+}
+</style>
+	<section style="min-height: 559px;" class="ui-page ui-page-theme-a ui-page-active" tabindex="0" data-url="page1" data-role="page" id="page1">
+		<div class="my-header-bg">
+			<img src="index_files/header_bg.gif" class="my-header-img">
+			<div class="my-ui-grid">
+				<div class="ui-grid-b">
+			    	<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:150px"></div></div>
+			    	<div class="ui-block-b">
+			    		<div class="ui-bar ui-bar-a" style="height:150px;">
+			    			<div class="my-header-image">
+			    				<img src="index_files/0.jpg"><br>
+			    				Jahng			    			</div>
+			    		</div>
+			    	</div>
+			   		<div class="ui-block-c">
+			   			<div class="ui-bar ui-bar-a" style="height:150px">
+
+			   			</div>
+			   		</div>
+				</div><!-- /grid-b -->
+			</div>
+			<div class="my-nav">
+				<div class="ui-grid-c">
+			    	<div class="ui-block-a" jump-url="http://wsq.qq.com/reflow/263536219" onclick="nav_jump(this)">
+			    		<div class="ui-bar ui-bar-a my-current" style="font-weight:400;">
+			    			<img src="index_files/logo.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			    			晒单区
+			    		</div>
+			    	</div>
+			    	<div class="ui-block-b" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/teach_buy/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			    		<div class="ui-bar ui-bar-a" style="font-weight:400;">			    			
+			    			<img src="index_files/car.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			    			购买流程
+			    		</div>
+			    	</div>
+			   		<div class="ui-block-c" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/integral/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			   			<div class="ui-bar ui-bar-a" style="font-weight:400;">			    			
+			    			<img src="index_files/dan.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			   				积分购
+			   			</div>
+			   		</div>
+			   		<div class="ui-block-c" jump-url="http://localhost/pz/wx/index.php/consumers/consumers/panic_buy/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" onclick="nav_jump(this)">
+			   			<div class="ui-bar ui-bar-a" style="border-right:none;font-weight:400;">		<img src="index_files/shai.png" alt="" style="margin-bottom:0.1em;width:24px;margin-top:0.5em;"><br>
+			   				全民疯抢</div>
+			   		</div>
+				</div><!-- /grid-b -->
+			</div>
+		</div>
+<!-- 		<header data-role="header" class="header" data-position="inline" >
+			<section class="banner">
+				<img class="member-bg" src="http://localhost/pz/wx/static/images/consumers/banner-1.png" alt="">
+				<ul class="control cl">
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+		</header> -->
+		<section role="main" data-role="content" class="content ui-content" style="background:#f5f5f5;">
+			<h3 class="cont theme" style="font-size:1em;">分类</h3>
+			<article class="themebox cl" style="overflow: hidden; height: 80px;" id="my-category-list">
+									
+					<p class="theme-list cl" style="margin-left:2%;margin-bottom:2px;">
+						<a data-ajax="false" class="theme-left ui-link" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_list/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/39">
+							<span class="cate-name" style="margin-top:0;">男装</span>
+							<span class="cate-desc"></span>
+						</a>
+						
+						<img class="cate-pic" src="index_files/lcj_201409131713173974.jpg" alt="" style="width: auto; height: 35px;">
+						
+					</p>
+					
+									
+					<p class="theme-list cl" style="margin-left:2%;margin-bottom:2px;">
+						<a data-ajax="false" class="theme-left ui-link" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_list/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/4">
+							<span class="cate-name" style="margin-top:0;">鞋子</span>
+							<span class="cate-desc"></span>
+						</a>
+						
+						<img class="cate-pic" src="index_files/lcj_201408211128084040.jpg" alt="" style="width: auto; height: 35px;">
+						
+					</p>
+					
+									
+					<p class="theme-list cl" style="margin-left:2%;margin-bottom:2px;">
+						<a data-ajax="false" class="theme-left ui-link" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_list/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/8">
+							<span class="cate-name" style="margin-top:0;">牛仔裤</span>
+							<span class="cate-desc"></span>
+						</a>
+						
+						<img class="cate-pic" src="index_files/lcj_201409101340264204.jpg" alt="" style="width: auto; height: 35px;">
+						
+					</p>
+					
+								<div style="clear:both;"></div>
+			</article>
+						<div style="text-align:center;background;display:none;" id="hide-more">
+				<img src="index_files/my-up.png" style="width:30px;">
+			</div>		
+			<div class="good-list" style="margin-bottom:6em;">
+				
+					
+					<div style="margin-bottom:10px;">
+						<h3 class="cont theme" style="font-size:1em;">男装</h3>
+						<fieldset class="ui-grid-a" style="padding:0 2%;">
+														   	<div class="ui-block-b" style="text-align:center;margin-bottom:10px;background:#fff;">
+							   		<div class="my-cloth-img">
+							   			<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/58">
+							   				<img src="index_files/lcj_201409131713173974.jpg" style="width:100%;">
+							   			</a>
+							   		</div>
+							   		<div class="my-cloth-des" value="树格2014秋季新款口袋休闲修身韩版潮男打底衫长袖t恤" style="height:2em;line-height:1em;overflow:hidden;text-align:left;font-size:0.9em;margin:0.5em 1em;-webkit-line-clamp:2;-webkit-box-orient:vertical;">树格2014秋季新款口袋休闲修身韩版潮男打底衫长袖t恤</div>
+							   		<!-- <div class="my-cloth-spec" style="text-align:left;font-size:0.9em;">款号：80979</div> -->
+							   		<div class="my-cloth-price" style="border-top:1px dashed #ccc;height:auto;text-align:left;font-size:0.9em;margin:0.5em 1em;color:#ff5616;padding-top:0.5em;">价格：￥134</div>
+							   	</div>
+						    						</fieldset>
+					</div>
+					
+				
+					
+				
+					
+					<div style="margin-bottom:10px;">
+						<h3 class="cont theme" style="font-size:1em;">鞋子</h3>
+						<fieldset class="ui-grid-a" style="padding:0 2%;">
+														   	<div class="ui-block-b" style="text-align:center;margin-bottom:10px;background:#fff;">
+							   		<div class="my-cloth-img">
+							   			<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/53">
+							   				<img src="index_files/lcj_201408211128084040.jpg" style="width:100%;">
+							   			</a>
+							   		</div>
+							   		<div class="my-cloth-des" value="商务休闲鞋新款流行男士皮鞋真皮潮流男鞋英伦风男鞋" style="height:2em;line-height:1em;overflow:hidden;text-align:left;font-size:0.9em;margin:0.5em 1em;-webkit-line-clamp:2;-webkit-box-orient:vertical;">商务休闲鞋新款流行男士皮鞋真皮潮流男鞋英伦风男鞋</div>
+							   		<!-- <div class="my-cloth-spec" style="text-align:left;font-size:0.9em;">款号：80110</div> -->
+							   		<div class="my-cloth-price" style="border-top:1px dashed #ccc;height:auto;text-align:left;font-size:0.9em;margin:0.5em 1em;color:#ff5616;padding-top:0.5em;">价格：￥165</div>
+							   	</div>
+						    						</fieldset>
+					</div>
+					
+				
+					
+				
+					
+				
+					
+					<div style="margin-bottom:10px;">
+						<h3 class="cont theme" style="font-size:1em;">牛仔裤</h3>
+						<fieldset class="ui-grid-a" style="padding:0 2%;">
+														   	<div class="ui-block-b" style="text-align:center;margin-bottom:10px;background:#fff;">
+							   		<div class="my-cloth-img">
+							   			<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/52">
+							   				<img src="index_files/lcj_201409101340264204.jpg" style="width:100%;">
+							   			</a>
+							   		</div>
+							   		<div class="my-cloth-des" value="2014恒也男装中低腰修身弯刀微挎新款弹力小脚裤" style="height:2em;line-height:1em;overflow:hidden;text-align:left;font-size:0.9em;margin:0.5em 1em;-webkit-line-clamp:2;-webkit-box-orient:vertical;">2014恒也男装中低腰修身弯刀微挎新款弹力小脚裤</div>
+							   		<!-- <div class="my-cloth-spec" style="text-align:left;font-size:0.9em;">款号：80731</div> -->
+							   		<div class="my-cloth-price" style="border-top:1px dashed #ccc;height:auto;text-align:left;font-size:0.9em;margin:0.5em 1em;color:#ff5616;padding-top:0.5em;">价格：￥112.2</div>
+							   	</div>
+						    							   	<div class="ui-block-b" style="text-align:center;margin-bottom:10px;background:#fff;">
+							   		<div class="my-cloth-img">
+							   			<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/51">
+							   				<img src="index_files/lcj_201409101805234818.jpg" style="width:100%;">
+							   			</a>
+							   		</div>
+							   		<div class="my-cloth-des" value="恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤" style="height:2em;line-height:1em;overflow:hidden;text-align:left;font-size:0.9em;margin:0.5em 1em;-webkit-line-clamp:2;-webkit-box-orient:vertical;">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</div>
+							   		<!-- <div class="my-cloth-spec" style="text-align:left;font-size:0.9em;">款号：80782</div> -->
+							   		<div class="my-cloth-price" style="border-top:1px dashed #ccc;height:auto;text-align:left;font-size:0.9em;margin:0.5em 1em;color:#ff5616;padding-top:0.5em;">价格：￥122.2</div>
+							   	</div>
+						    							   	<div class="ui-block-b" style="text-align:center;margin-bottom:10px;background:#fff;">
+							   		<div class="my-cloth-img">
+							   			<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/50">
+							   				<img src="index_files/lcj_201304231450599832.jpg" style="width:100%;">
+							   			</a>
+							   		</div>
+							   		<div class="my-cloth-des" value="马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤" style="height:2em;line-height:1em;overflow:hidden;text-align:left;font-size:0.9em;margin:0.5em 1em;-webkit-line-clamp:2;-webkit-box-orient:vertical;">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤</div>
+							   		<!-- <div class="my-cloth-spec" style="text-align:left;font-size:0.9em;">款号：51855</div> -->
+							   		<div class="my-cloth-price" style="border-top:1px dashed #ccc;height:auto;text-align:left;font-size:0.9em;margin:0.5em 1em;color:#ff5616;padding-top:0.5em;">价格：￥104</div>
+							   	</div>
+						    						</fieldset>
+					</div>
+					
+					</div>
+			<!-- <h3 class="cont theme">热门推荐</h3> --><!-- 
+			<article class="themebox themebox2 cl">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+				<img src="http://localhost/pz/wx/static/images/consumers/hot1.png" alt="">
+			</article>
+			<h4 class="copyright">品众批发网 版权所有 服务热线： 4006-338-178</h4> -->
+		</section>
+		<!-- <div style="text-align:center;bottom:4em;position:fixed;width:100%;"><a href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="height:40px;line-height:40px;border-radius:15px 15px;background:#9ec326;display:inline-block;width:130px;text-align:center;color:#ffffff;box-shadow:none;text-shadow:none;">我也要开店</a></div> -->
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$('#load-more').click(function(){
+		//var new_height = $('.cate-pic').css('height');
+		new_height = 42*(Math.ceil(3/2));
+		$('#my-category-list').css('height',new_height+'px');
+		$(this).hide();
+		$('#hide-more').show();
+	});
+	$('#hide-more').click(function(){
+		//var new_height = $('.cate-pic').css('height');
+		//new_height = parseFloat(new_height)*2+8;
+		$('#my-category-list').css('height','78px');
+		$(this).hide();
+		$('#load-more').show();
+	});
+	var count = $('.cate-pic').length;
+	//console.log($('.cate-pic').eq(0));
+	if(count){
+		var height = $('.cate-pic').css('height','35px');
+		$('#my-category-list').css('height','80px');
+	}else{
+		$('#my-category-list').css('height','0');
+	}
+
+	/*
+	var obj = $('.my-cloth-des');
+	$.each(obj,function(i){
+		var font_size = $(obj[i]).css('font-size');
+		var width = $(obj[i]).css('width');
+		var max_count = (Math.round(parseFloat(width)/parseFloat(font_size)))*2;
+		var content = $(obj[i]).attr('value');
+		var new_content = '';
+		if(content.length<max_count){
+			new_content = content;
+		}else{
+			new_content = content.substring(0,max_count);
+			new_content +='...';
+		}
+		console.log(new_content);
+		$(obj[i]).html(new_content);
+
+	});
+	*/
+});
+
+</script><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer role="contentinfo" data-role="footer" class="footer ui-footer ui-bar-inherit">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list nav-current">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="index_files/index.png" alt="" style="margin-bottom:0.5em;"><br>
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="index_files/category.png" alt="" style="margin-bottom:0.5em;"><br>
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="index_files/collect.png" alt="" style="margin-bottom:0.5em;"><br>
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="index_files/carc.png" alt="" style="margin-bottom:0.5em;"><br>
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a class="ui-link" data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="index_files/man.png" alt="" style="margin-bottom:0.5em;"><br>
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

@@ -1,0 +1,71 @@
+@charset "utf-8";
+#page1 .header{
+	background: #ff5517;
+	padding-left: 5%;
+}
+#page1 h1{
+	display:inline-block;
+	margin-left: 0px;
+	color: #fff;
+	font-size: 1.2em;
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+#page1 .search{
+	position: static;
+	float: right;
+	display: inline-block;
+	margin-top:0.6em;
+	margin-right: 5%;
+}
+#page1 .content{
+	margin-top: 1em;
+}
+
+#page1 .addform{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	min-height: 20em;
+}
+#page1 .addform tr{
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+}
+#page1 .addform input{
+	border: none;
+	background: none;
+	outline: none;
+	display: inline-block;
+	padding-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 50%;
+}
+#page1 .addform label{
+	display: inline-block;
+	font-family: "微软雅黑";
+	font-size: 1.1em;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+}
+#page1 .addform .addr{
+	padding-bottom: 3em;
+}
+#page1 .comfirm{
+	display:block;
+	margin-left: 0px;
+	background: #fb4200;
+	font-size: 1.2em;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	width: 100%;
+	cursor: pointer;
+	padding-top: 1em;
+	border: none;
+	color: #ffffff;
+	padding-bottom: 1em;
+	outline: none;
+}
