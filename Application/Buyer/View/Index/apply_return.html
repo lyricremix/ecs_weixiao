@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>申请退款</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247962,
+        nonceStr: 'vuO6SIxFpQIBm4Ss',
+        signature: 'c41b77d1c403aa8fca5795a970e1069263914441',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试四内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+<style type="text/css">
+.ui-select{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#select-3-button{
+	border:none;
+	background: #fff;
+	box-shadow: none;
+	text-shadow:none;
+}
+.addform .ui-input-search{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+</style>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/finalpayment.css" />
+
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+<!-- 		<header data-role="header" class="header" data-position="inline" >
+			<a href="javascript:window.history.go(-1);" data-ajax="false" data-role="none">
+				<img class="top-img control" style="float:left;" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt="">
+			</a>
+			<h1 data-role="none"></h1>
+		</header> -->
+		<section data-role="content" class="content">
+			<p class="cont red" style="font-size:1em;">申请退款</p>
+			<section class="contain">
+				<table data-role="none" class="addform">
+					<tr>
+						<td>
+							<p class="cont black" style="font-size:1em;">
+								退款类型
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="cont black back-type" style="font-size:1em;border-bottom:1px solid #efefef;margin:0;padding-top:1em;padding-bottom:1em;background:#efefef;">
+								<input type="radio" name="back_type" value="2" data-role="none" style="width:0.5em;height:auto;" checked/>
+								我要退款(未发货)
+							</div>
+							<div class="cont black back-type" style="font-size:1em;margin:0;padding-top:1em;padding-bottom:1em;">
+								<input type="radio" name="back_type" value="3" data-role="none" style="width:0.5em;height:auto;"/>
+								我要退货
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div style="font-size:0.8em;padding-left:0.7em;margin-top:0.5em;">温馨提示：顾客下单七日后，订单管理已修改为“已完成”，不能申请退款</div>
+			</section>
+			<p class="cont red" style="font-size:1em;">退款原因</p>
+			<section class="contain">
+				<table data-role="none" class="addform">
+					<tr>
+						<td>
+							<select name="reason">
+								<option value="收到商品破损">收到商品破损</option>
+								<option value="商品错发/漏发">商品错发/漏发</option>
+								<option value="收到商品不符">收到商品不符</option>
+								<option value="商品质量问题">商品质量问题</option>
+							</select>
+						</td>
+					</tr>
+                    <!-- 
+					<tr class="acenter">
+						<td>
+							<p class="cont">
+								<label for="username">帐号:</label>
+									<input data-role="none" placeholder="请输入帐号！" id="username" name="username" type="text">
+								
+							</p>
+						</td>
+					</tr>
+					<tr class="acenter">
+						<td>
+							<p class="cont">
+								<label for="password">密码:</label>
+									<input data-role="none"  id="password" name="password" type="password">
+							</p>
+						</td>
+					</tr>
+                    -->
+				</table>
+			</section>
+			<p class="cont red" style="font-size:1em;">退款说明(可不填)</p>
+			<section class="contain">
+				<table data-role="none" class="addform">
+					<tr>
+						<td>
+							<input type="text" name="remark" value="" style="width:94%;border:none;" data-role="none"/>
+						</td>
+					</tr>
+				</table>
+			</section>
+			<button class="comfirm" data-role="none"  id="getBrandWCPayRequest" style="font-size:1em;">立即申请</button>
+		</section>
+	</section>
+<script language="javascript">
+    $(document).ready(function(){
+		$('#getBrandWCPayRequest').click(function(){
+			var rec_id = 29124;
+			var back_type = $('input[name="back_type"]:checked').val();
+			var reason = $('select[name="reason"]').val();
+			var remark = $('input[name="remark"]').val();
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/return_apply/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'rec_id='+rec_id+'&back_type='+back_type+'&reason='+reason+'&remark='+remark,
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					if(msg.status == 1){
+						window.location.href = "http://localhost/pz/wx/index.php/consumers/buyer/success_apply/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+					}
+					//window.location.reload();
+				}
+			});	
+		});
+		$('.back-type').click(function(){
+			$('.back-type').css('background','#fff');
+			$(this).css('background','#efefef');
+			var index = $('.back-type').index($(this));
+			$('input[name="back_type"]').eq(index).prop('checked',true);
+		});
+    });
+</script>
+</body>
+</html>

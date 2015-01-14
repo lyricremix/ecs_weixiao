@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>购物车</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247781,
+        nonceStr: 'KLZZdDVRewz0819j',
+        signature: 'c48a8c432e5a57dfc0b478ed26ff7e93782584b6',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试四内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/shopcar.css" />
+<style type="text/css">
+#page1 .footer-list{
+	list-style: none;
+	/*padding-top: 0;*/
+}
+#page1 .footer-list a{
+	text-decoration: none;
+	text-shadow:none;
+	box-shadow: none;
+}
+#page1 .footer{
+	background: #ff5616;
+}
+#page1 .footer-list{
+	list-style: none;
+	padding-top: 0;
+    float: left;
+    padding-bottom: 0.6em;
+    padding-top: 0.6em;
+    text-align: center;
+    width: 20%;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+		<header data-role="header" class="header" data-position="inline" >
+			<a href="javascript:window.history.go(-1);" data-role="none"><img class="top-img" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt="" style="float:left;margin-right:0.5em;"></a>
+			<h1 data-role="none">购物车</h1>
+		</header>
+		<section data-role="content" class="content" style="margin-bottom:9em;">
+			<article class="infomation infomation2">
+			<!-- 
+				<h3 class="info-title">
+					<span class="hook"></span>
+					<span class="shopname">蒙特MENTAR旗舰店</span>
+				</h3> -->
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="bd7375fba88b9c5a3e545e874716c6f1"></span>
+					<input data-role="none" type="checkbox" value="bd7375fba88b9c5a3e545e874716c6f1" style="display:none;" class="my-choose" id="bd7375fba88b9c5a3e545e874716c6f1"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178033)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 28（2.1尺）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/bd7375fba88b9c5a3e545e874716c6f1" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="39e0cc080ddc325a8b055724ce626e43"></span>
+					<input data-role="none" type="checkbox" value="39e0cc080ddc325a8b055724ce626e43" style="display:none;" class="my-choose" id="39e0cc080ddc325a8b055724ce626e43"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178034)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 29（2.2尺）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/39e0cc080ddc325a8b055724ce626e43" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="a9cc3bd18450c0ed17df7e3a08d5e821"></span>
+					<input data-role="none" type="checkbox" value="a9cc3bd18450c0ed17df7e3a08d5e821" style="display:none;" class="my-choose" id="a9cc3bd18450c0ed17df7e3a08d5e821"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178036)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 31（2尺4）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/a9cc3bd18450c0ed17df7e3a08d5e821" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="00ad1e4217236a5a307f70d45c3068b6"></span>
+					<input data-role="none" type="checkbox" value="00ad1e4217236a5a307f70d45c3068b6" style="display:none;" class="my-choose" id="00ad1e4217236a5a307f70d45c3068b6"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178037)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 32（2.5尺）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/00ad1e4217236a5a307f70d45c3068b6" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="fa4a5462ab938f94a1ac958707e4bda9"></span>
+					<input data-role="none" type="checkbox" value="fa4a5462ab938f94a1ac958707e4bda9" style="display:none;" class="my-choose" id="fa4a5462ab938f94a1ac958707e4bda9"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178038)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 33（2尺2.6）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/fa4a5462ab938f94a1ac958707e4bda9" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="b4987042afff4a09c731ffa323b7ddfd"></span>
+					<input data-role="none" type="checkbox" value="b4987042afff4a09c731ffa323b7ddfd" style="display:none;" class="my-choose" id="b4987042afff4a09c731ffa323b7ddfd"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178039)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 34（2尺2.65）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/b4987042afff4a09c731ffa323b7ddfd" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+								<section class="goodslist cl">
+
+					<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:7em;" onclick="my_choose(this)" sub-total="104" rowid="051644485e0c39a81950dfb338511e5b"></span>
+					<input data-role="none" type="checkbox" value="051644485e0c39a81950dfb338511e5b" style="display:none;" class="my-choose" id="051644485e0c39a81950dfb338511e5b"/>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178042)</span>
+					<table style="width:60%;">
+						<tr>
+							<td class="tdwidth cont cont2" style="width:40%;">颜色 : 蓝色</td>
+							<td class="cont cont2">尺码 : 38（2尺9）</td>
+						</tr>
+						<tr>
+							<td class="cont cont2" style="width:40%;">数量 : 1</td>
+							<td class="cont cont2">单价 : ¥104</td>
+						</tr>
+						<tr>
+							<td class="cont cont2"></td>
+							<td class="cont cont2">
+								小计 : ¥<span class="red" id="">104</span>
+
+									<div style="float:right;"> <a href="javascript:;" onclick="my_delete(this)" jump-url="http://localhost/pz/wx/index.php/consumers/cart/delete_cart/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/051644485e0c39a81950dfb338511e5b" style="color:red;" data-ajax="false">删除</a></div>
+							</td>
+						</tr>
+					</table>
+				</section>
+							</article>
+		</section>
+		<footer data-role="footer" class="footer" style="position:fixed;bottom:0;">
+			<section class="comfirm-bg"></section>
+			<section class="comfirm cl" style="background:#ccc;bottom:3.4em;">
+				<!-- <span class="hook hook2"></span> -->
+				<span class="hook" style="text-align:center;font-size:0.5em;color:#fff;top:3.1em;float:left;" onclick="my_choose_all(this)" total="728" ></span>
+				<p class="cont money">总金额 : <span class="red">￥</span><span class="red" id="my-total-money">0.00</span></p>
+				<button data-ajax="false" url="http://localhost/pz/wx/index.php/consumers/order/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" class="submit" data-role="none" onclick="my_jump(this)">结算</button>
+			</section>
+			<nav style="background:#464951;">
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/index.png" alt="" style="margin-bottom:0.5em;"><br />
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/category.png" alt="" style="margin-bottom:0.5em;"><br />
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/collect.png" alt="" style="margin-bottom:0.5em;"><br />
+							收藏
+						</a>
+					</li>
+					<li class="footer-list nav-current">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/carc.png" alt="" style="margin-bottom:0.5em;"><br />
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/man.png" alt="" style="margin-bottom:0.5em;"><br />
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
+<script type="text/javascript">
+//用户出发浏览器返回按钮是恢复原来的选择状态
+$(document).ready(function(){
+	var rowids = $('.my-choose');
+	var length = rowids.length;
+	var total = 0.00;
+	for(var i = 0;i<length;i++){
+		//console.log($(rowids[i]).prop('checked'));
+		if($(rowids[i]).prop('checked') == true){		
+			$(rowids[i]).prev().html('√');
+			$(rowids[i]).prev().css('background','#fc4300');
+			total += parseFloat($(rowids[i]).prev().attr('sub-total'));
+		}else if($(rowids[i]).prop('checked') == false){
+			$(rowids[i]).prev().html('');
+			$(rowids[i]).prev().css('background','#ffffff');
+		}
+	}
+	$('#my-total-money').html(total);
+});
+function my_delete(obj){
+	if(confirm('确认删除？')){
+		window.location.href = $(obj).attr('jump-url');
+	}else{
+		return false;
+	}
+}
+function my_choose(obj){
+	var html = $(obj).html();
+	var total = $('#my-total-money').html();
+	html == '√'?$(obj).html(''):$(obj).html('√');
+	if(html==''){
+		$(obj).css('background','#fc4300');
+		var new_total = parseFloat(total)+parseFloat($(obj).attr('sub-total'));
+	}else{
+		$(obj).css('background','#ffffff');
+		var new_total = accSub(parseFloat(total),parseFloat($(obj).attr('sub-total')));
+	}
+	$('#my-total-money').html(new_total);
+	$('#'+$(obj).attr('rowid')).prop('checked',function(){
+		return !this.checked;
+	});
+}
+function my_choose_all(obj){
+	var html = $(obj).html();
+	var total = $(obj).attr('total');
+	html == '√'?$(obj).html(''):$(obj).html('√');
+	if(html==''){
+		$(obj).css('background','#fc4300');
+		//选中所有
+		$('.goodslist .hook').css('background','#fc4300');
+		$('.goodslist .hook').html('√');
+		$('.goodslist .my-choose').prop('checked',true);
+		$('#my-total-money').html(total);
+	}else{
+		$(obj).css('background','#ffffff');
+		//取消选中所有
+		$('.goodslist .hook').css('background','#ffffff');
+		$('.goodslist .hook').html('');
+		$('.goodslist .my-choose').prop('checked',false);
+		$('#my-total-money').html(0);
+	}
+}
+function my_jump(obj){
+	var rowids = $('.my-choose');
+	var rowid = new Array();
+	var length = rowids.length;
+	for(var i = 0;i<length;i++){
+		//console.log($(rowids[i]).prop('checked'));
+		if($(rowids[i]).prop('checked')==true){
+			rowid[i]= {};
+			rowid[i] = $(rowids[i]).val();
+		}
+	}
+	var rowid = JSON.stringify(rowid);
+	//console.log(rowid);
+	window.location.href = $(obj).attr('url')+'/'+rowid;
+}
+/**
+ ** 减法函数，用来得到精确的减法结果
+ ** 说明：javascript的减法结果会有误差，在两个浮点数相减的时候会比较明显。这个函数返回较为精确的减法结果。
+ ** 调用：accSub(arg1,arg2)
+ ** 返回值：arg1加上arg2的精确结果
+ **/
+function accSub(arg1, arg2) {
+    var r1, r2, m, n;
+    try {
+        r1 = arg1.toString().split(".")[1].length;
+    }
+    catch (e) {
+        r1 = 0;
+    }
+    try {
+        r2 = arg2.toString().split(".")[1].length;
+    }
+    catch (e) {
+        r2 = 0;
+    }
+    m = Math.pow(10, Math.max(r1, r2)); //last modify by deeka //动态控制精度长度
+    n = (r1 >= r2) ? r1 : r2;
+    return ((arg1 * m - arg2 * m) / m).toFixed(n);
+}
+
+</script>
+
+</body>
+</html>

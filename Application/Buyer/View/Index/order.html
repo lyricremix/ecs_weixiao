@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>我的订单</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247804,
+        nonceStr: 'LFXhX1IJ6rjPEwQS',
+        signature: '2707eeb03ee4dd3950918a08c435cc648a7ad65c',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试三内容12';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/comfirmorder.css" />
+<style type="text/css">
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head + body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head + body .ui-btn-a.ui-focus, html head + body .ui-body-a.ui-focus{
+	text-shadow:none;
+	box-shadow: none;
+}
+</style>
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+		<header data-role="header" class="header" data-position="inline" >
+			<h1 data-role="none"></h1>
+			<a href="" data-role="none"><!-- <img class="top-img" src="css/images/common/icon-msg-left.png" alt=""> --></a>
+		</header>
+		<form method="post" action="http://localhost/pz/wx/index.php/consumers/order/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/[&quot;bd7375fba88b9c5a3e545e874716c6f1&quot;,&quot;39e0cc080ddc325a8b055724ce626e43&quot;,&quot;a9cc3bd18450c0ed17df7e3a08d5e821&quot;,&quot;00ad1e4217236a5a307f70d45c3068b6&quot;,&quot;fa4a5462ab938f94a1ac958707e4bda9&quot;,&quot;b4987042afff4a09c731ffa323b7ddfd&quot;,&quot;051644485e0c39a81950dfb338511e5b&quot;]" id="order-form" data-ajax="false" >
+		<section data-role="content" class="content" style="padding:0.3em;">
+			<article class="infomation">
+				<h3 class="info-title" style="font-size:0.9em;">收货信息</h3>
+									<p class="cont info">
+						<input type="radio" data-role="none" name="address" value="2978" />
+						<soan class="mobile">广东省广州新港西路231号</span><br />
+						<span class="mobile" style="padding-left:1.7em;">收货人：叶佳航</span><br />
+						<span class="mobile" style="padding-left:1.7em;">手机：15920326855</span><br />
+						<span class="mobile" style="padding-left:1.7em;">电话：020-8888888</span><br />
+						<span class="mobile" style="padding-left:1.7em;">邮编：510631</span>
+						<!-- <span class="default">设为默认地址</span> -->
+					</p>
+					<input type="hidden" name="address_id" value="2978" />
+									<p class="cont info">
+						<input type="radio" data-role="none" name="address" value="2979" />
+						<soan class="mobile">广东省广州海珠区新港西路231号3栋四楼文豆网络科技</span><br />
+						<span class="mobile" style="padding-left:1.7em;">收货人：叶佳航</span><br />
+						<span class="mobile" style="padding-left:1.7em;">手机：15920326855</span><br />
+						<span class="mobile" style="padding-left:1.7em;">电话：123123</span><br />
+						<span class="mobile" style="padding-left:1.7em;">邮编：510631</span>
+						<!-- <span class="default">设为默认地址</span> -->
+					</p>
+					<input type="hidden" name="address_id" value="2979" />
+								<section class="manage">
+					<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/add_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-role="none">
+							<!-- <img src="css/images/common/magane.png" alt=""> -->增加收货地址
+					</a>
+				</section>
+			</article>
+			<article class="infomation">
+				<p class="cont" style="float:left;font-size:0.9em;color:#000;">配送方式</p>
+				<p class="cont" style="float:right;font-size:0.9em;color:#b6b6b6;">快递 ( 免费 )<!-- <span class="red">¥10.00</span> --></p>
+				<div style="clear:both;"></div>
+			</article>
+			<article class="infomation" style="padding-bottom:0.2em;">
+				<p class="cont"><input type="text" name="postscript" placeholder="配送方式商家自主选择，有特殊要求请留言"/></p>
+			</article>
+			<article class="infomation infomation2">
+				<h3 class="info-title" style="font-size:0.9em;">
+					<span class="shopname">商品清单</span><!-- 
+					<span class="red">¥728</span>
+					<img class="gray-goto" src="http://localhost/pz/wx/static/images/consumers/gray-goto.png"/> -->
+				</h3>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178033)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 28（2.1尺）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178034)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 29（2.2尺）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178036)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 31（2尺4）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178037)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 32（2.5尺）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178038)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 33（2尺2.6）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178039)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 34（2尺2.65）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<p class="goodslist">
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+					<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤(款号 : 178042)</span><br />
+					<span class="cont cont2">颜色 : 蓝色</span>
+					<span class="cont cont2">尺码 : 38（2尺9）</span>
+					<span class="cont cont2">单价 : ¥104</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+								<!-- 
+				<p class="goodslist">
+					<img class="goods-pic" src="http://localhost/pz/wx/static/images/consumers/goods-1.png" alt="">
+					<span class="goods-desc">酷爽一夏2014韩版女装歌星连体裤牛仔背带裤学生背带宽松翻边短裤(款号 : 4D409-E-8823)</span><br />
+					<span class="cont cont2">颜色 : 蓝绿色</span>
+					<span class="cont cont2">尺码 : L</span>
+					<span class="cont cont2">单价 : ¥49.00</span>
+					<span class="cont cont2">数量 : 1</span>
+				</p>
+				 -->
+			</article>	
+		</section>
+		<footer data-role="footer" class="footer">
+			<section class="comfirm">
+				<p class="cont money">总金额 : <span class="red">¥728</span></p>
+				<button data-ajax="false" class="submit" data-role="none" value="提交订单" onclick="return my_submit_order()">提交订单</button>
+			</section>
+		</footer>
+		</form>
+	</section>
+<script type="text/javascript">
+function my_submit_order(){
+	var have_address = 1;
+	if(!have_address){
+		if(confirm('增加收货地址')){
+			window.location.href = "http://localhost/pz/wx/index.php/consumers/address/add_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";			
+		}
+		return false;
+	}else{
+		var address = $('input[name="address"]:checked').length;
+
+        if(!address){
+        	alert('请选择收货地址');
+        	return false;
+        }
+		$('#order-form').submit();
+	}
+}
+</script>
+</body>
+</html>

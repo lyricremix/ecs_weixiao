@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>商品列表</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247569,
+        nonceStr: 'sv2eY2wqDpRFdsYS',
+        signature: '194656c6c92bf764e8b8c2d55a6c0ac97b3fcd96',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "http://wx.qlogo.cn/mmopen/w9h84ibs6ic2cwVYeJTqmRtNpkhXTqYMrAGA5mAW6d5rPQ4qHvDuSkaZ5ndOj3jajyCRfCjOSYdl9GlicWCUR0v5Lib41WE4B5eu/0";
+    var shareTitle = '测试四内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/goodslist.css" />
+
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+		<header data-role="header" class="header" data-position="inline" >
+			<a data-ajax="false" href="javascript:window.history.go(-1);" data-role="none"><img class="top-img" style="float:left;" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt=""></a>
+			<h1 data-role="none"></h1>
+<!-- 			<a href="" data-role="none">
+				<img class="top-img" src="css/images/common/control.png" alt="">
+				<img class="top-img control" src="css/images/common/icon-msg-left.png" alt="">
+			</a> -->
+		</header>
+		<section data-role="content" class="content" style="margin-bottom:5em;">
+		<!-- 	<nav>
+			<ul class="menu">
+				<li class="current">
+					<div class="orderfont">
+						<span class="red">价格</span>
+						<span class="order-ud">
+							<a href=""><img style="float: right;" src="css/images/common/order-u.png" alt=""></a>
+							<a href=""><img style="float: right;" src="css/images/common/order-d.png" alt=""></a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="orderfont">
+						<span>销量</span>
+						<span class="order-ud">
+							<a href=""><img style="float: right;" src="css/images/common/order-u.png" alt=""></a>
+							<a href=""><img style="float: right;" src="css/images/common/order-d.png" alt=""></a>
+						</span>
+					</div>
+				</li>
+			</ul>
+			</nav> -->
+<!-- 			<section class="orders">
+				<h3 class="cont black">价格区间</h3>
+				<ul>
+					<li>1-50</li>
+					<li>50-100</li>
+					<li>100-150</li>
+					<li>200-250</li>
+					<li>300-350</li>
+				</ul>
+			</section> -->
+			<article class="infomation infomation2">
+								<section class="goodslist">
+					<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/52">
+						<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_26/lcj_201409101340264204.jpg" alt="">
+						<span class="goods-desc">2014恒也男装中低腰修身弯刀微挎新款弹力小脚裤</span><br />
+						<span class="cont mtop">款号 : 1321071</span>
+						<span class="cont black">
+							¥<span class="red">112.2</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+								<section class="goodslist">
+					<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/51">
+						<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_123/lcj_201409101805234818.jpg" alt="">
+						<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br />
+						<span class="cont mtop">款号 : 1321102</span>
+						<span class="cont black">
+							¥<span class="red">122.2</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+								<section class="goodslist">
+					<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/goods_detail/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/50">
+						<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+						<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤</span><br />
+						<span class="cont mtop">款号 : 2602</span>
+						<span class="cont black">
+							¥<span class="red">104</span>
+							<span class="top-img top-img2">广州</span>
+						</span>
+					</a>
+				</section>
+							</article>	
+		</section>
+
+		<!-- <div style="text-align:center;bottom:4em;position:fixed;width:100%;"><a href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="height:40px;line-height:40px;border-radius:15px 15px;background:#9ec326;display:inline-block;width:130px;text-align:center;color:#ffffff;box-shadow:none;text-shadow:none;">我也要开店</a></div> --><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer data-role="footer" class="footer">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/index.png" alt="" style="margin-bottom:0.5em;"><br />
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/category.png" alt="" style="margin-bottom:0.5em;"><br />
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/collect.png" alt="" style="margin-bottom:0.5em;"><br />
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/carc.png" alt="" style="margin-bottom:0.5em;"><br />
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/man.png" alt="" style="margin-bottom:0.5em;"><br />
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+</body>
+</html>

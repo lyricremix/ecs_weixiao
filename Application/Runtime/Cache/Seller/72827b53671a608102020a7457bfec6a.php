@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="/ec_weixiao/Public/css/jquery.mobile-1.4.2.min.css" />
-	<link rel="stylesheet" href="/ec_weixiao/Public/css/common.css" />
-	<script src="/ec_weixiao/Public/js/jquery-1.11.1.min.js"></script>
-	<script src="/ec_weixiao/Public/js/jquery.mobile-1.4.2.min.js"></script>
+	<link rel="stylesheet" href="/ecs_weixiao/Public/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="/ecs_weixiao/Public/css/common.css" />
+	<script src="/ecs_weixiao/Public/js/jquery-1.11.1.min.js"></script>
+	<script src="/ecs_weixiao/Public/js/jquery.mobile-1.4.2.min.js"></script>
 <style type="text/css">
 .price_filter{
 	padding:20px 10px;
@@ -36,11 +36,11 @@
 	<div data-role="content">
 		<header data-role="header" class="header" data-position="inline" >
 			<a href="http://localhost/pz/wx/index.php/merchant/merchant/get_live_category/39" dat-ajax="false" data-role="none" style="margin-left:10px;">
-				<img class="top-img" src="/ec_weixiao/Public/images/consumers/icon-msg-left.png" alt="">
+				<img class="top-img" src="/ecs_weixiao/Public/images/consumers/icon-msg-left.png" alt="">
 			</a>
 			<h1 data-role="none">商品列表</h1>
 		</header>
-	<link rel="stylesheet" href="/ec_weixiao/Public/css/merchant_goods_list.css" />
+	<link rel="stylesheet" href="/ecs_weixiao/Public/css/merchant_goods_list.css" />
  		<div style="height:40px;line-height:40px;padding-left:10px;font-size:0.9em;">当前位置(商品区)：分类>男装>上装</div>
 		<div style="padding:10px 10px 0;text-shadow:none;box-shadow:none;">价格区间</div>
  		<div class="price_filter">

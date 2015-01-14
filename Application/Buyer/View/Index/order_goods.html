@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>订单商品</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247929,
+        nonceStr: 'v6udEQcubKF4Fz7s',
+        signature: '005581ce5fa39674c271009202cd7a26ca7da4af',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试内容1';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/myorder.css" />
+
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+		<!-- <header data-role="header" class="header" data-position="inline" >
+			<h1 data-role="none"></h1>
+			<a href="javascript:window.history.go(-1)" data-ajax="false" data-role="none"><img class="top-img" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt=""></a>
+		</header> -->
+		<section data-role="content" class="content">
+			<article class="infomation infomation2">
+								<section class="goodslist" style="position:relative;">
+					<p class="cont fright">
+						¥<span class="red">122.20</span><br/>
+						<span class="gray">X2</span>
+					</p>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_123/lcj_201409101805234818.jpg" alt="">
+					<p class="goods-description">
+					<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br />
+					<span class="cont">款号 : 80782</span>
+					<span class="cont">颜色:图片色尺寸:29</span>
+										<span class="cont" style="text-align:right;position:absolute;bottom:3em;right:1em;"><a href="javascript:;" data-role="none" rec-id="29123" style="text-decoration:none;padding:0.3em 0.5em;background:#fc4300;color:#ffffff;box-shadow:none;text-shadow:none;" onclick="return_apply(this)">申请退款</a></span>
+										</p>
+				</section>
+								<section class="goodslist" style="position:relative;">
+					<p class="cont fright">
+						¥<span class="red">122.20</span><br/>
+						<span class="gray">X1</span>
+					</p>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_123/lcj_201409101805234818.jpg" alt="">
+					<p class="goods-description">
+					<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br />
+					<span class="cont">款号 : 80782</span>
+					<span class="cont">颜色:图片色尺寸:31</span>
+										<span class="cont" style="text-align:right;position:absolute;bottom:3em;right:1em;"><a href="javascript:;" data-role="none" rec-id="29124" style="text-decoration:none;padding:0.3em 0.5em;background:#fc4300;color:#ffffff;box-shadow:none;text-shadow:none;" onclick="return_apply(this)">申请退款</a></span>
+										</p>
+				</section>
+								<section class="goodslist" style="position:relative;">
+					<p class="cont fright">
+						¥<span class="red">122.20</span><br/>
+						<span class="gray">X1</span>
+					</p>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_123/lcj_201409101805234818.jpg" alt="">
+					<p class="goods-description">
+					<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br />
+					<span class="cont">款号 : 80782</span>
+					<span class="cont">颜色:图片色尺寸:33</span>
+										<span class="cont" style="text-align:right;position:absolute;bottom:3em;right:1em;"><a href="javascript:;" data-role="none" rec-id="29125" style="text-decoration:none;padding:0.3em 0.5em;background:#fc4300;color:#ffffff;box-shadow:none;text-shadow:none;" onclick="return_apply(this)">申请退款</a></span>
+										</p>
+				</section>
+								<section class="goodslist" style="position:relative;">
+					<p class="cont fright">
+						¥<span class="red">122.20</span><br/>
+						<span class="gray">X1</span>
+					</p>
+					<img class="goods-pic" src="http://img.pf178.com/data/files/store_13174/goods_123/lcj_201409101805234818.jpg" alt="">
+					<p class="goods-description">
+					<span class="goods-desc">恒也2014秋冬季时尚新款牛仔裤青春版弹力修身花白微挎小脚裤</span><br />
+					<span class="cont">款号 : 80782</span>
+					<span class="cont">颜色:图片色尺寸:36</span>
+										<span class="cont" style="text-align:right;position:absolute;bottom:3em;right:1em;"><a href="javascript:;" data-role="none" rec-id="29126" style="text-decoration:none;padding:0.3em 0.5em;background:#fc4300;color:#ffffff;box-shadow:none;text-shadow:none;" onclick="return_apply(this)">申请退款</a></span>
+										</p>
+				</section>
+								<p class="cont fright gray settlement">
+					共&nbsp;<span class="red">&nbsp;5&nbsp;</span>&nbsp;件商品&nbsp;&nbsp;实付 :&nbsp;&nbsp;<span class="red">¥611.00</span>
+				</p>
+							</article>	
+		</section>
+		<footer data-role="footer" class="footer" style="text-align:center;">
+						<button class="comfirm" data-role="none" onclick="jump_pay()" style="width:30%;display:inline;">立即付款</button>
+			<button class="comfirm" data-role="none"  onclick="cancle_order(this)" order-id="15720" style="width:30%;display:inline;">取消订单</button>
+					</footer>
+	</section>
+<script type="text/javascript">
+function jump_pay(){
+	window.location.href = "http://localhost/pz/wx/index.php/consumers/pay/wx_pay?openid=oaQ8auGYY-uQTtIUAFFxqnQJpjWQ&order_id=15720&total_count=5";
+}
+
+function return_apply(obj){
+	var rec_id = $(obj).attr('rec-id');
+	window.location.href = "http://localhost/pz/wx/index.php/consumers/buyer/return_apply/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ"+'/'+rec_id;
+}
+		function cancle_order(obj){
+			if(!confirm('是否取消')){
+				return ;
+			}
+			var order_id = $(obj).attr('order-id');
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/cancle_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'order_id='+order_id+'&status=0',
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					window.location.href = "http://localhost/pz/wx/index.php/consumers/buyer/my_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/11";
+				}
+			});
+		}
+</script>
+</body>
+</html><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer data-role="footer" class="footer">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/index.png" alt="" style="margin-bottom:0.5em;"><br />
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/category.png" alt="" style="margin-bottom:0.5em;"><br />
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/collect.png" alt="" style="margin-bottom:0.5em;"><br />
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/carc.png" alt="" style="margin-bottom:0.5em;"><br />
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/man.png" alt="" style="margin-bottom:0.5em;"><br />
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+</body>
+</html>

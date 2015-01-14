@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>修改地址</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421248033,
+        nonceStr: 'm7AN1yTSRZNUretS',
+        signature: '40027f850e94b79e2c44ae219e941b5bfa390d44',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试四内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/addaddress.css" />
+<style type="text/css">
+#page1 h1{
+	text-align: center;
+}
+.ui-header .ui-title{
+	margin-right: 0;
+}
+#page1 .header{
+	padding-left: 0;
+}
+#page1 h1{
+	display: block;
+}
+#page1 .addform .addr{
+	padding-bottom: 0;
+	margin-bottom: 10px;
+}
+#page1 .comfirm{
+	margin-top: 10px;
+}
+.my-select{
+	border:none;
+	background: #f9f9f9;
+}
+</style>
+
+	<section data-role="page" id="page1">
+		<header data-role="header" class="header">
+			<h1>编辑地址</h1>
+			<!-- <a href="" class="search" data-role="none"><img class="search" src="css/images/common/search-orange.png" alt=""></a> -->
+		</header>
+		<section data-role="content" class="content">
+			<fieldset data-role="controlgroup">
+				<form action="">
+					<div class="contain">
+						<table data-role="none" class="addform">
+							<tr>
+								<td>
+									<label for="consignee">收货人姓名:</label>
+									<input placeholder="请输入收货人姓名！" id="consignee" data-role="none" type="text" name="consignee" value="叶佳航">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="phone_tel">手机号码:</label>
+									<input data-role="none" placeholder="请输入手机号码！" id="phone_tel" name="phone_tel" type="number" value="15920326855">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="phone_mob">电话:</label>
+									<input data-role="none" placeholder="请输入电话！" id="phone_mob" name="phone_mob" type="text" value="123123">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="zipcode">邮政编码:</label>
+									<input data-role="none" placeholder="请输入邮政编码！" id="zipcode" name="zipcode" type="number" value="510631">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="province">省:</label>
+									<select onchange="load_city(this.value)" id="province" name="province" class="my-select" data-role="none">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="addr">
+									<label for="city">市:</label>
+									<select onchange="load_district(this.value)" id="city" name="city" class="my-select" data-role="none">
+									</select>
+								</td>
+							</tr><!-- 
+							<tr>
+								<td class="addr">
+									<label for="district">区:</label>
+									<select id="district" name="district" class="my-select" data-role="none">
+									</select>
+								</td>
+							</tr> -->
+							<tr>
+								<td class="addr">
+									<label for="address">详细地址:</label>
+									<input data-role="none" placeholder="请输入详细地址！" id="address" name="address" type="text" value="海珠区新港西路231号3栋四楼文豆网络科技">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<input type="button" class="comfirm" data-role="none" value="确认" id="my-add-address">
+				</form>
+			</fieldset>
+		</section>
+	</section>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$('#my-add-address').click(function(){
+		var province = $('#province').val();
+		var city = $('#city').val();
+		var phone_tel = $('#phone_tel').val();
+		var phone_mob = $('#phone_mob').val();
+		var zipcode = $('#zipcode').val();
+		var consignee = $('#consignee').val();
+		var address = $('#address').val();
+		var url = "http://localhost/pz/wx/index.php/consumers/address/change_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2979";
+		if(phone_tel=='' && phone_mob==''){
+			alert('手机和电话必须填一个');
+			return false;
+		}
+		if(consignee==''){
+			alert('请填写收货人姓名');
+			return false;
+		}
+		if(address == ''){
+			alert('请填写详细地址');
+			return false;
+		}
+		if(province == '-1'){
+			alert('请选择省');
+			return false;
+		}
+		if(city == '-2'){
+			alert('请选择市');
+			return false;
+		}
+		$.ajax({
+			type:'post',
+			url:url,
+			data:'province='+province+'&city='+city+'&phone_tel='+phone_tel+'&phone_mob='+phone_mob+'&zipcode='+zipcode+'&consignee='+consignee+'&address='+address,
+			success:function(msg){
+				var msg = eval('('+msg+')');
+				if(msg.status!=1){
+					alert(msg.msg);
+					return false;
+				}
+				window.location.href = "http://localhost/pz/wx/index.php/consumers/address/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			}
+
+		});
+	});
+});
+    function load_province(){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_province",
+            type: 'post',
+            success:function(data){
+                var data=eval('('+data+')');
+                console.log(data['data'].length);
+                var count=data['data'].length;     
+                var str='<option value="-1">选择省份</option>';
+                for(var i=0;i<count;i++){
+                    //console.log(data['data'][i].region_name);
+                    str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                }
+                //console.log(str);
+                $('#province').html(str);
+            }
+
+        });
+    }
+    function load_city(region_id){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_city",
+            type: 'post',
+            data:'region_id='+region_id,
+            success:function(data){
+                var data=eval('('+data+')');
+                //console.log(data['data'].length);
+                if(data['status']){
+                    var count=data['data'].length;     
+                    var str='<option value="-2">选择城市</option>';
+                    for(var i=0;i<count;i++){
+                        //console.log(data['data'][i].region_name);
+                        str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                    }
+                    //console.log(str);
+                    $('#city').html(str);
+                }
+            }
+
+        });
+    }
+
+        function load_district(region_id){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_city",
+            type: 'post',
+            data:'region_id='+region_id,
+            success:function(data){
+                var data=eval('('+data+')');
+                //console.log(data['data'].length);
+                if(data['status']){
+                    var count=data['data'].length;     
+                    var str='';
+                    for(var i=0;i<count;i++){
+                        //console.log(data['data'][i].region_name);
+                        str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                    }
+                    //console.log(str);
+                    $('district').html(str);
+                }
+            }
+
+        });
+    }
+    load_province();
+</script>
+
+</body>
+</html>

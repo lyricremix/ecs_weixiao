@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>注册</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247493,
+        nonceStr: '7PXWmHGVLWvEbXgk',
+        signature: 'ba96a09f295a15590506989006fb5057f1b64508',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+    var imgUrl = "";
+    var shareTitle = '测试内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/addaddress.css" />
+<style type="text/css">
+#page1 .contain{
+	height:auto;
+	min-height:auto;
+}
+#page1 h1{
+	text-align: center;
+}
+.ui-header .ui-title{
+	margin-right: 0;
+}
+#page1 .header{
+	padding-left: 0;
+}
+#page1 h1{
+	display: block;
+}
+.my-select{
+	background: #f9f9f9;
+	border:none;
+}
+</style>
+</head>
+<body>
+
+	<section data-role="page" id="page1">
+<!-- 		<header data-role="header" class="header">
+			<h1>登陆</h1>
+			<a href="" class="search" data-role="none"><img class="search" src="css/images/common/search-orange.png" alt=""></a>
+		</header> -->
+		<section data-role="content" class="content">
+			<fieldset data-role="controlgroup">
+				<form action="">
+					<div class="contain">
+						<table data-role="none" class="addform">
+							<tr>
+								<td>
+									<label for="province">省:</label>
+									<select onchange="load_city(this.value)" id="province" name="province" class="my-select" style="width:30%;" data-role="none">
+									</select>
+									<label for="city">市:</label>
+									<select id="city" name="city" class="my-select" style="width:30%;" data-role="none">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="telephone">手机号码:</label>
+									<input name="telephone" placeholder="请输入手机号码" id="telephone" data-role="none" type="number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="recommend_telephone">推荐手机:</label>
+									<input name="recommend_telephone" readonly value="15920326855" id="recommend_telephone" data-role="none" type="number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="mobile">输入密码:</label>
+									<input name="password" data-role="none" placeholder="请输入密码" id="password" type="password">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="password_2">重复密码:</label>
+									<input name="password_2" data-role="none" placeholder="再次输入密码" id="password_2" type="password">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<button style="margin-top:1em;" class="comfirm" data-role="none" id="my-register">立即注册</button>
+				</form>
+			</fieldset>
+		</section>
+	</section>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#my-register').click(function(){
+		var province = $('#province').val();
+		var city = $('#city').val();
+		var telephone = $('#telephone').val();
+		var recommend_telephone = $('#recommend_telephone').val();
+		var password = $('#password').val();
+		var password_2 = $('#password_2').val();
+		var url = "http://localhost/pz/wx/index.php/consumers/buyer/register_second/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+		if(telephone==''){
+			alert('请输入手机号码');
+			return false;
+		}
+		if(password==''){
+			alert('请输入密码');
+			return false;
+		}
+		if(password != password_2){
+			alert('两次输入密码不一致');
+			return false;
+		}
+		$.ajax({
+			type:'post',
+			url:url,
+			data:'telephone='+telephone+'&recommend_telephone='+recommend_telephone+'&password='+password+'&province='+province+'&city='+city,
+			success:function(msg){
+				var msg = eval('('+msg+')');
+				alert(msg.msg);
+				if(msg.status==1){
+					window.location.href = 'http://mp.weixin.qq.com/s?__biz=MzA3NTQ4MDcwNw==&mid=202708576&idx=1&sn=6724403e6f609e03a164b093a824e8d7#rd';
+				}
+			}
+
+		});
+	});
+});
+    function load_province(){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_province",
+            type: 'post',
+            success:function(data){
+                var data=eval('('+data+')');
+                console.log(data['data'].length);
+                var count=data['data'].length;     
+                var str='<option value="-1">选择省份</option>';
+                for(var i=0;i<count;i++){
+                    //console.log(data['data'][i].region_name);
+                    str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                }
+                //console.log(str);
+                $('#province').html(str);
+            }
+
+        });
+    }
+    function load_city(region_id){
+        $.ajax({
+            url: "http://localhost/pz/wx/index.php/my_region/get_city",
+            type: 'post',
+            data:'region_id='+region_id,
+            success:function(data){
+                var data=eval('('+data+')');
+                //console.log(data['data'].length);
+                if(data['status']){
+                    var count=data['data'].length;     
+                    var str='';
+                    for(var i=0;i<count;i++){
+                        //console.log(data['data'][i].region_name);
+                        str+='<option value="'+data['data'][i].region_id+'">'+data['data'][i].region_name+'</option>';
+                    }
+                    //console.log(str);
+                    $('#city').html(str);
+                }
+            }
+
+        });
+    }
+    load_province();
+</script>
+
+</body>
+</html>

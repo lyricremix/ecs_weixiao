@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>地址管理</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421248014,
+        nonceStr: 'ruNloDyO6kH1IN1D',
+        signature: '24f7b1ee4afa6cefa38834970686295099d3301b',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试四内容';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/comfirmorder.css" />
+<style type="text/css">
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head + body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head + body .ui-btn-a.ui-focus, html head + body .ui-body-a.ui-focus{
+	text-shadow:none;
+	box-shadow: none;
+}
+#page1 .infomation{
+	margin-bottom: 0;
+}
+#page1 .content{
+	padding:0;
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+	background: #ffffff;
+}
+#page1 .header{
+	padding-left:1.7em;
+}
+#page1 .info{
+	margin-top: 0;
+}
+#page1 .default{
+	float: right;
+}
+#page1 .default a{
+	text-shadow:none;
+	box-shadow: none;
+	color:#b6b6b6;
+	margin-right: 10px;
+	text-decoration: none;
+}
+</style>
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+		<header data-role="header" class="header" data-position="inline" >
+			<a href="javascript:window.history.go(-1);" data-ajax="false" data-role="none"><img class="top-img" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt="" style="float:left;"></a>
+			<h1 data-role="none"></h1>
+		</header>
+		<section data-role="content" class="content">
+			<article class="infomation">
+				
+					<p class="cont info">
+						
+						<span class="mobile" style="padding-left:1.7em;">收货地址：广东省广州新港西路231号</span><br />
+						<span class="mobile" style="padding-left:1.7em;">收货人：叶佳航</span><br />
+						<span class="mobile" style="padding-left:1.7em;">手机：15920326855</span><br />
+						<span class="mobile" style="padding-left:1.7em;">电话：020-8888888</span><br />
+						<span class="mobile" style="padding-left:1.7em;">邮编：510631</span>
+						<span class="default">
+							<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/drop_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2978">删除</a>
+							<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/change_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2978">编辑</a>
+
+						</span>
+					</p>
+				
+					<p class="cont info">
+						
+						<span class="mobile" style="padding-left:1.7em;">收货地址：广东省广州海珠区新港西路231号3栋四楼文豆网络科技</span><br />
+						<span class="mobile" style="padding-left:1.7em;">收货人：叶佳航</span><br />
+						<span class="mobile" style="padding-left:1.7em;">手机：15920326855</span><br />
+						<span class="mobile" style="padding-left:1.7em;">电话：123123</span><br />
+						<span class="mobile" style="padding-left:1.7em;">邮编：510631</span>
+						<span class="default">
+							<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/drop_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2979">删除</a>
+							<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/change_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/2979">编辑</a>
+
+						</span>
+					</p>
+								<section class="manage">
+					<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/address/add_address/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-role="none">
+							<!-- <img src="css/images/common/magane.png" alt=""> -->增加收货地址
+					</a>
+				</section>
+			</article>
+		</section>
+	</section>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

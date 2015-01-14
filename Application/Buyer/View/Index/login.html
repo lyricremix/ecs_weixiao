@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>登陆</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247655,
+        nonceStr: 's0wdZxNawMVaeH8y',
+        signature: '27834b4ac4f00a2dc156753ff2ed96a1e7f76bc6',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试三内容12';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/addaddress.css" />
+<style type="text/css">
+#page1 .contain{
+	height:auto;
+	min-height:auto;
+}
+#page1 h1{
+	text-align: center;
+}
+.ui-header .ui-title{
+	margin-right: 0;
+}
+#page1 .header{
+	padding-left: 0;
+}
+#page1 h1{
+	display: block;
+}
+#page1 .addform tr td{
+	height:24px;
+	line-height: 24px;
+}
+#page1 .addform tr input{
+	height:24px;
+	line-height: 24px;
+}
+#page1 .addform{
+	min-height: 4em;
+	margin-bottom: 10px;
+}
+</style>
+	<section data-role="page" id="page1">
+<!-- 		<header data-role="header" class="header">
+			<h1>登陆</h1>
+			<a href="" class="search" data-role="none"><img class="search" src="css/images/common/search-orange.png" alt=""></a>
+		</header> -->
+		<section data-role="content" class="content">
+			<fieldset data-role="controlgroup">
+					<div class="contain">
+						<table data-role="none" class="addform">
+							<tr>
+								<td>
+									<label for="my-telephone">手机号码:</label>
+									<input placeholder="请输入手机号码" id="my-telephone" data-role="none" type="number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="my-password">输入密码:</label>
+									<input data-role="none" placeholder="请输入密码" id="my-password" type="password">
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div style="text-align:right;height:1em;line-height:1em;margin-bottom:1em;">
+						<a href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="text-decoration:none;float:left;">立即注册</a>
+						<a href="http://localhost/pz/wx/index.php/consumers/buyer/find_password/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="text-decoration:none;float:right;">找回密码</a>
+
+					</div>
+					<button class="comfirm" data-role="none" value="登陆" id="my-login">登陆</button>
+			</fieldset>
+		</section>
+	</section>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#my-login').click(function(){
+		var telephone = $('#my-telephone').val();
+		var password = $('#my-password').val();
+		var url = "http://localhost/pz/wx/index.php/consumers/buyer/login/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+		if(telephone==''){
+			alert('请输入手机号码');
+			return false;
+		}
+		if(password==''){
+			alert('请输入密码');
+			return false;
+		}
+		$.ajax({
+			type:'post',
+			url:url,
+			data:'password='+password+'&telephone='+telephone,
+			success:function(msg){
+				var msg = eval('('+msg+')');
+
+				alert(msg.msg);
+				/*
+				if(msg.status!=1){
+					alert(msg.msg);
+					return;
+				}
+				*/
+				window.history.go(-1);
+				//window.location.href = "http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			}
+
+		});
+	});
+});
+</script>
+
+</body>
+</html>

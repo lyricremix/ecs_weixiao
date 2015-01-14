@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>申请成功</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247987,
+        nonceStr: 'cC33sBMhNy875XPx',
+        signature: 'dea1012d203ea1304a3f0e728c68878bffbb61af',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "http://wx.qlogo.cn/mmopen/w9h84ibs6ic2cwVYeJTqmRtNpkhXTqYMrAGA5mAW6d5rPQ4qHvDuSkaZ5ndOj3jajyCRfCjOSYdl9GlicWCUR0v5Lib41WE4B5eu/0";
+    var shareTitle = '测试内容1';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/index.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/common.css" />
+<style type="text/css">
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b{
+	width:48%;
+	margin-right: 2%;
+	border:1px solid #eeeeee;
+}
+#page1 .theme-list{
+	border:1px solid #eee;
+}
+#page1 .theme-list{
+	width:46%;
+}
+</style>
+	<section data-role="page" id="page1" style="background:#e82416;">
+		<img style="width:100%;margin-bottom:3em;"src="http://localhost/pz/wx/static/images/consumers/apply.jpg"/>
+<script type="text/javascript">
+/*
+$(document).ready(function(){
+	var obj = $('.my-cloth-des');
+	$.each(obj,function(i){
+		var font_size = $(obj[i]).css('font-size');
+		var width = $(obj[i]).css('width');
+		var max_count = (Math.round(parseFloat(width)/parseFloat(font_size)))*2;
+		var content = $(obj[i]).attr('value');
+		var new_content = '';
+		if(content.length<max_count){
+			new_content = content;
+		}else{
+			new_content = content.substring(0,max_count);
+			new_content +='...';
+		}
+		console.log(new_content);
+		$(obj[i]).html(new_content);
+
+	});
+});
+*/
+</script><style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer data-role="footer" class="footer">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/index.png" alt="" style="margin-bottom:0.5em;"><br />
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/category.png" alt="" style="margin-bottom:0.5em;"><br />
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/collect.png" alt="" style="margin-bottom:0.5em;"><br />
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/carc.png" alt="" style="margin-bottom:0.5em;"><br />
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/man.png" alt="" style="margin-bottom:0.5em;"><br />
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+</body>
+</html>

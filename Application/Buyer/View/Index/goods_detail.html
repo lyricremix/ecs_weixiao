@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>商品详情</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: true,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247590,
+        nonceStr: '9uGlf0YmCILIYJS0',
+        signature: '260382c0d3a26c1504586d1117a3dde289bbfb92',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg";
+    var shareTitle = '马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/buynow.css" />
+<style type="text/css">
+#page1 .footer-list{
+	list-style: none;
+	/*padding-top: 0;*/
+}
+#page1 .footer-list a{
+	text-decoration: none;
+
+}
+.goods_style li{
+	list-style: none;
+}
+.stytle-title{
+	float:left;
+	margin-right: 1em;
+	font-size: 0.8em;
+}
+.style-value{
+
+	font-size: 0.8em;
+}
+
+</style>
+	<section data-role="page" id="page1">
+		<section data-role="content" class="content">
+			<article class="goodslist cl">
+				<img class="goods-pic" src="http://img.pf178.com/data/files/store_2648/goods_59/lcj_201304231450599832.jpg" alt="">
+				<span class="goods-desc">马特达蒙秋季新品男裤_时尚男士修身微弹_直筒牛仔长裤</span><br />
+				<table>
+					<tr class="cont black">
+						<td class="total">价格 : </td>
+						<td><span class="red">￥104.00 </span></td>
+					</tr><!-- 
+					<tr class="cont black">
+						<td>&nbsp;≥4件 : </td>
+						<td><span class="red">21.00 </span>元/件</td>
+					</tr> -->
+				</table>
+			</article><!-- 
+			<article class="buy-title cl">
+				<a style="font-size:0.8em;text-decoration:none;color:#333;" href="http://localhost/pz/wx/index.php/consumers/consumers/img_goods/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/51855" data-ajax="false">查看商品图文</a>
+			</article> -->
+			<article class="buy-title cl">
+				<span class="cont black color">颜色</span>
+				<span class="cont black size">尺码</span>
+				<span class="cont black order">订购量</span>
+			</article>
+												<article class="buylist cl">
+						<span class="cont black color color2">蓝色</span>
+						<span class="cont black size size2">28（2.1尺） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178033" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178033"  id="spec-178033" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178033"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">29（2.2尺） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178034" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178034"  id="spec-178034" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178034"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">30（2.3尺） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178035" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178035"  id="spec-178035" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178035"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">31（2尺4） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178036" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178036"  id="spec-178036" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178036"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">32（2.5尺） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178037" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178037"  id="spec-178037" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178037"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">33（2尺2.6... <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178038" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178038"  id="spec-178038" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178038"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">34（2尺2.6... <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178039" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178039"  id="spec-178039" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178039"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">35（2尺7） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178040" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178040"  id="spec-178040" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178040"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">36（2尺8） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178041" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178041"  id="spec-178041" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178041"  onclick="my_add(this)">
+
+						</span>
+					</article>
+									<article class="buylist cl">
+						<span class="cont black color color2"></span>
+						<span class="cont black size size2">38（2尺9） <b class="cont"><!-- ( 库存 : 200件 ) --></b></span>
+						<span class="cont black order order2">
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-1.png" alt="" spec-id="178042" onclick="my_subtract(this)" >
+
+							<input class="num" style="margin-left:3px;margin-right:3px;height:21px;" spec-id="178042"  id="spec-178042" data-role="none" value='0' type="text"/>
+
+							<img style="width:38px;vertical-align:middle;" src="http://localhost/pz/wx/static/images/consumers/tags-2.png" alt="" spec-id="178042"  onclick="my_add(this)">
+
+						</span>
+					</article>
+										<div style="text-align:center;">
+				<button style="width:45%;margin-top:30px;height:3em;margin-bottom:10px;display:inline;font-size:0.8em;background:#b57230;" class="comfirm" data-role="none" id="my-add-cart" style="margin-bottom:4em;">加入购物车</button>
+				<button style="width:45%;margin-top:30px;height:3em;margin-bottom:10px;font-size:0.8em;display:inline;background:#b10000;" class="comfirm" data-role="none" id="my-buy-now" style="margin-bottom:4em;">立即购买</button>
+				<div style="clear:both;"></div>
+			</div>
+			<div style="height:3em;line-height:3em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin-bottom:1em;font-size:0.8em;">商品图文信息</div>
+			<div class="my-goods-images" style="margin-bottom:60px;"> 
+				<div class="goods_style">
+					<ul style="padding-left:0;">
+						<li>
+							<div class="stytle-title">款号:</div>
+							<div class="style-value">2602</div>
+						</li>
+						<li>
+							<div class="stytle-title">重量:</div>
+							<div class="style-value">0.35</div>
+						</li>
+						<li>
+							<div class="stytle-title">用料:</div>
+							<div class="style-value">棉弹牛仔布</div>
+						</li>
+						<li>
+							<div class="stytle-title">风格:</div>
+							<div class="style-value">欧美大码</div>
+						</li>
+						<li>
+							<div class="stytle-title">吊牌:</div>
+							<div class="style-value">有</div>
+						</li>
+						<li>
+							<div class="stytle-title">颜色:</div>
+							<div class="style-value">
+								蓝色 							</div>
+						</li>
+						<li>
+							<div class="stytle-title">尺码:</div>
+							<div class="style-value">
+								28（2.1尺） 29（2.2尺） 30（2.3尺） 31（2尺4） 32（2.5尺） 33（2尺2.6） 34（2尺2.65） 35（2尺7） 36（2尺8） 38（2尺9） 							</div>
+						</li>
+					</ul>
+				</div>
+									<img src="http://img.pf178.com/data/files/store_2648/goods_71/201304231451115052.jpg" style="width:100%;" />
+									<img src="http://img.pf178.com/data/files/store_2648/goods_74/201304231451147262.jpg" style="width:100%;" />
+									<img src="http://img.pf178.com/data/files/store_2648/goods_78/201304231451188943.jpg" style="width:100%;" />
+									<img src="http://img.pf178.com/data/files/store_2648/goods_84/201304231451249043.jpg" style="width:100%;" />
+									<img src="http://img.pf178.com/data/files/store_2648/goods_116/201304231455163687.jpg" style="width:100%;" />
+									<img src="http://img.pf178.com/data/files/store_2648/goods_103/201304231651437223.png" style="width:100%;" />
+							</div>
+		</section>
+<form action="http://localhost/pz/wx/index.php/consumers/order/buy_now/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" method="post" id="buy-now-form" data-ajax="false">
+	<input value='' name="specs" type="hidden" id="buy-now-specs" />
+	<input value='1' name="buy_now" type="hidden"/>
+</form>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#my-add-cart').click(function(){
+		var specs = $('.num');
+		//console.log($(specs[0]).val());
+		var spec = new Array();
+		var j = 0;
+		var length = specs.length;
+		for(var i = 0;i<length;i++){
+			if(parseInt($(specs[i]).val())>=0){
+				spec[j]= {};
+				spec[j].spec_id = $(specs[i]).attr('spec-id');
+				spec[j].num = $(specs[i]).val();
+				j++;
+			}
+		}
+		var spec = JSON.stringify(spec);
+		console.log(spec);
+		var url = "http://localhost/pz/wx/index.php/consumers/cart/add/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+		$.ajax({
+			type:'post',
+			url:url,
+			data:'spec='+spec,
+			success:function(msg){
+				console.log(msg);
+				var msg = eval('('+msg+')');
+				if(msg.status == 1){
+					if(confirm('成功添加到购物车，去购物车结算?')){
+						window.location.href = "http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+					}
+				}
+			}
+		});
+	});
+	$('#my-buy-now').click(function(){
+		var specs = $('.num');
+		//console.log($(specs[0]).val());
+		var spec = new Array();
+		var j = 0;
+		var length = specs.length;
+		for(var i = 0;i<length;i++){
+			if(parseInt($(specs[i]).val())>=0){
+				spec[j]= {};
+				spec[j].spec_id = $(specs[i]).attr('spec-id');
+				spec[j].num = $(specs[i]).val();
+				j++;
+			}
+		}
+		var spec = JSON.stringify(spec);
+		//console.log(spec);
+		$('#buy-now-specs').val(spec);
+		$('#buy-now-form').submit();
+		//var url = "http://localhost/pz/wx/index.php/consumers/order/buy_now/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+		//window.location.href = url+'/'+spec;
+
+	});
+});
+
+
+function my_subtract(obj){
+	var spec_id = $(obj).attr('spec-id');
+	var old_value = $('#spec-'+spec_id).val();
+	if(parseInt(old_value)<=0){
+		return;
+	}
+	$('#spec-'+spec_id).val(old_value-1); 
+}
+function my_add(obj){
+	var spec_id = $(obj).attr('spec-id');
+	var old_value = $('#spec-'+spec_id).val();
+	$('#spec-'+spec_id).val(parseInt(old_value)+1); 
+}
+
+</script>
+<style type="text/css">
+#page1 .footer-list a{
+	text-shadow:none;
+	box-shadow: none;
+}
+.nav-current{
+	background:#333333;
+}
+</style>
+		<footer data-role="footer" class="footer">
+
+			<nav>
+				<ul style="padding-left:0;margin:0;">
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/index.png" alt="" style="margin-bottom:0.5em;"><br />
+							首页
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/consumers/category/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/category.png" alt="" style="margin-bottom:0.5em;"><br />
+							分类
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/collect.png" alt="" style="margin-bottom:0.5em;"><br />
+							开店
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/cart/index/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/carc.png" alt="" style="margin-bottom:0.5em;"><br />
+							购物车
+						</a>
+					</li>
+					<li class="footer-list ">
+						<a data-ajax="false" href="http://localhost/pz/wx/index.php/consumers/buyer/member/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ">
+							<img src="http://localhost/pz/wx/static/images/consumers/man.png" alt="" style="margin-bottom:0.5em;"><br />
+							我的
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+<script>
+function nav_jump(obj){
+	window.location.href = $(obj).attr('jump-url');
+}
+</script>	
+</body>
+</html>

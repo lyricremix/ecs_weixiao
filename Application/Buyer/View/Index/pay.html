@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>立即支付</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247845,
+        nonceStr: 'NzGC2Qv5lVoIreRj',
+        signature: '9101b9f6986e9fc4ae805a3489b32a308488427e',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试内容1';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/finalpayment.css" />
+
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+<!-- 		<header data-role="header" class="header" data-position="inline" >
+			<a href="javascript:window.history.go(-1);" data-ajax="false" data-role="none">
+				<img class="top-img control" style="float:left;" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt="">
+			</a>
+			<h1 data-role="none"></h1>
+		</header> -->
+		<section data-role="content" class="content">
+			<p class="cont red" style="font-size:1em;">确认订单</p>
+			<section class="contain">
+				<table data-role="none" class="addform">
+					<tr>
+						<td>
+							<p class="cont black" style="font-size:1em;">
+								购买总件数 :
+								<span class="red mleft" style="font-size:1em;">7</span>
+								<!-- <a class="edittotal" href="">修改</a> -->
+							</p>
+						</td>
+					</tr><!-- 
+					<tr>
+						<td>
+							<p class="cont black">使用优惠 : <span class="mleft">无</span></p>
+							
+						</td>
+					</tr> -->
+					<tr>
+						<td>
+							<p class="cont black" style="font-size:1em;">最终应付 : <span class="red mleft">¥728.00</span></p>
+						</td>
+					</tr>
+				</table>
+			</section>
+			<p class="cont red" style="font-size:1em;">支付方式</p>
+			<section class="contain">
+				<table data-role="none" class="addform">
+					<tr>
+						<td>
+							<p class="cont black" style="font-size:1em;">
+								微信支付
+								<a class="edittotal" href=""><img src="http://localhost/pz/wx/static/images/consumers/down.png" alt=""></a>
+							</p>
+						</td>
+					</tr>
+                    <!-- 
+					<tr class="acenter">
+						<td>
+							<p class="cont">
+								<label for="username">帐号:</label>
+									<input data-role="none" placeholder="请输入帐号！" id="username" name="username" type="text">
+								
+							</p>
+						</td>
+					</tr>
+					<tr class="acenter">
+						<td>
+							<p class="cont">
+								<label for="password">密码:</label>
+									<input data-role="none"  id="password" name="password" type="password">
+							</p>
+						</td>
+					</tr>
+                    -->
+				</table>
+			</section>
+			<button class="comfirm" data-role="none"  id="getBrandWCPayRequest" style="font-size:1em;">立即支付</button>
+			
+<!-- 		<div style="text-align:center;bottom:3em;position:fixed;width:100%;"><a href="http://localhost/pz/wx/index.php/consumers/buyer/register/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ" data-ajax="false" style="height:40px;line-height:40px;border-radius:15px 15px;background:#9ec326;display:inline-block;width:130px;text-align:center;color:#ffffff;box-shadow:none;text-shadow:none;">我也要开店</a></div> -->
+		</section>
+	</section>
+<script language="javascript">
+    $(document).ready(function(){
+        $('#getBrandWCPayRequest').click(function(){
+            WeixinJSBridge.invoke('getBrandWCPayRequest',{"appId":"wx19420fcef76fae92","package":"bank_type=WX&body=1501321544&fee_type=1&input_charset=UTF-8&notify_url=http%3A%2F%2Fm.pf178.com%2Fpzwx%2Findex.php%3Fd%3Dconsumers%26c%3Dpay%26m%3Dnotify_url&out_trade_no=1501321544&partner=1220181301&spbill_create_ip=127.0.0.1&total_fee=72800&sign=B91B9A51001BA9B8DD464BCCEE2D1F62","timeStamp":"'1421247845'","nonceStr":"2h9o8Qxa5NTyTgM7","paySign":"ebfef1e7df7be1605707c47366c686cc1a7db9f9","signType":"sha1"},function(res){
+           
+            if(res.err_msg == 'get_brand_wcpay_request:ok'){
+            	window.location.href = "http://localhost/pz/wx/index.php/consumers/pay/validata/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/1501321544/24";
+                return false;
+            }else{
+            	alert(res.err_code+res.err_desc+res.err_msg);
+                alert('支付失败');
+            }
+            //WeixinJSBridge.log(res.err_msg);
+            //alert(res.err_code+res.err_desc+res.err_msg);  
+        });
+
+    });
+    });
+
+</script>
+</body>
+</html>

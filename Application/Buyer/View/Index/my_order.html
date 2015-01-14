@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+  <title>我的订单</title>
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/footer.css" />
+	<script src="http://localhost/pz/wx/static/js/jquery-1.11.1.min.js"></script>
+	<script src="http://localhost/pz/wx/static/js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://localhost/pz/wx/static/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+   wx.config({
+        debug: false,
+        appId: 'wx80fb3c76287e1f85',
+        timestamp: 1421247913,
+        nonceStr: 'vhn5KilnDdZcpbFe',
+        signature: '45a729a75a7f5a1a8361b184e27988c90146028d',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+        ]
+    });
+wx.ready(function () {
+    var lineLink = window.location.href;
+    var imgUrl = "";
+    var shareTitle = '测试内容1';
+  // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareAppMessage({
+      title: '我的微店',
+      desc: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击发送给朋友');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+
+  // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    wx.onMenuShareTimeline({
+      title: shareTitle,
+      link: lineLink,
+      imgUrl: imgUrl,
+      trigger: function (res) {
+        //alert('用户点击分享到朋友圈');
+      },
+      success: function (res) {
+        //alert('已分享');
+      },
+      cancel: function (res) {
+        //alert('已取消');
+      },
+      fail: function (res) {
+        //alert(JSON.stringify(res));
+      }
+    });
+});
+  </script>
+</head>
+<body>
+<link rel="stylesheet" href="http://localhost/pz/wx/static/css/consumers/myorder.css" />
+<style type="text/css">
+.ui-grid-b, .ui-grid-b, .ui-grid-c, .ui-grid-d, .ui-grid-solo{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+</style>
+	<section data-role="page" id="page1" style="overflow-y: auto; overflow-x: hidden">
+<!-- 		<header data-role="header" class="header" data-position="inline" >
+			<h1 data-role="none"></h1>
+			<a href="javascript:window.history.go(-1);" data-role="none" data-ajax="false"><img class="top-img" src="http://localhost/pz/wx/static/images/consumers/icon-msg-left.png" alt=""></a>
+		</header> -->
+		<section data-role="content" class="content">
+			<article class="infomation infomation2" id="my-pay" style="padding-top:0;font-size:0.85em;">
+				<div class="ui-grid-c" style="background:#eeeeee;height:40px;line-height:40px;">
+    				<div class="ui-block-a" style="text-align:center;">单号</div>
+    				<div class="ui-block-b" style="text-align:center;">金额</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					<select name="order_status" data-role="none" id="order-status">
+    						<option value="0" >已取消</option>
+    						<!-- <option value="10">已取消</option> -->
+    						<option value="11" selected>未付款</option>
+    						<option value="20" >已付款</option>
+    						<option value="30" >已发货</option>
+    						<option value="40" >已完成</option>
+    					</select>
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">查看</div>
+				</div>
+												<div class="ui-grid-c">
+    				<div class="ui-block-a" style="text-align:center;">1501171927</div>
+    				<div class="ui-block-b" style="text-align:center;">￥611.00</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					未付款    					    					<a data-ajax="false" href="javascript:;" onclick="cancle_order(this)" order-id="15720">取消</a>
+    					    					
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">
+    					<a href="http://localhost/pz/wx/index.php/consumers/buyer/my_order_goods/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/15720" data-ajax="false">详细</a>
+    				</div>
+				</div>
+								<div class="ui-grid-c">
+    				<div class="ui-block-a" style="text-align:center;">1501321544</div>
+    				<div class="ui-block-b" style="text-align:center;">￥728.00</div>
+    				<div class="ui-block-c" style="text-align:center;">
+    					未付款    					    					<a data-ajax="false" href="javascript:;" onclick="cancle_order(this)" order-id="15721">取消</a>
+    					    					
+    				</div>
+    				<div class="ui-block-d" style="text-align:center;">
+    					<a href="http://localhost/pz/wx/index.php/consumers/buyer/my_order_goods/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ/15721" data-ajax="false">详细</a>
+    				</div>
+				</div>
+							</article>		
+		</section>
+	</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#order-status').change(function(){
+			var status = $(this).val();
+			window.location.href = "http://localhost/pz/wx/index.php/consumers/buyer/my_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ"+'/'+status;
+		});
+	});
+		function cancle_order(obj){
+			if(!confirm('是否取消')){
+				return ;
+			}
+			var order_id = $(obj).attr('order-id');
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/cancle_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'order_id='+order_id+'&status=0',
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					window.location.reload();
+				}
+			});
+		}
+		function confirm_order(obj){
+			if(!confirm('是否确认')){
+				return ;
+			}
+			var order_id = $(obj).attr('order-id');
+			var url = "http://localhost/pz/wx/index.php/consumers/buyer/cancle_order/oaQ8auGYY-uQTtIUAFFxqnQJpjWQ";
+			$.ajax({
+				type:'post',
+				url:url,
+				data:'order_id='+order_id+'&status=40',
+				success:function(msg){
+					var msg = eval('('+msg+')');
+					alert(msg.msg);
+					window.location.reload();
+				}
+			});
+		}
+</script>
+</body>
+</html>
